@@ -1,4 +1,4 @@
-export { Button } from "./Button";
 export { Heading } from "./Heading";
+export { Button } from "./Button";
 
-export { Layout } from "./Layout";
+export { Wave } from "./Wave";

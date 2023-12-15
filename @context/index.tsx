@@ -4,7 +4,13 @@
 import type { FC } from "react";
 
 // Core
-import { createContext, useMemo, useEffect, useState } from "react";
+import {
+  createContext,
+  useMemo,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
 
 // Create Context base
 export const StoreContext = createContext({} as AppContext);
@@ -31,35 +37,28 @@ interface AppContext {
 type Theme = "light" | "dark";
 
 export const Store: FC<Props> = props => {
-  const [isPhone, setIsPhone] = useState<boolean>();
-  const isPhoneMemo = useMemo(() => isPhone, [isPhone]);
-
+  const [isPhone, setIsPhone] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [theme, setTheme] = useState<Theme>("light");
 
-  useEffect(() => {
-    // Check if users device is smaller than 768px and enable Phone layout
-    const isPhone = window.matchMedia("(max-width: 992px)").matches;
-
-    if (isPhone) setIsPhone(isPhone);
-
-    // Listen to window resize and resize layouts
-    window.addEventListener("resize", detectLayout);
+  const detectLayout = useCallback(() => {
+    setIsPhone(window.matchMedia("(max-width: 768px)").matches);
+    setIsTablet(window.matchMedia("(max-width: 1192px)").matches);
   }, []);
 
-  // Detect window resize and enable respective layout
-  const detectLayout = () => {
-    const isPhone = window.matchMedia("(max-width: 992px)").matches;
-
-    // Act accordingly by enabling isPhone layout
-    setIsPhone(isPhone);
-  };
+  useEffect(() => {
+    detectLayout();
+    window.addEventListener("resize", detectLayout);
+    return () => window.removeEventListener("resize", detectLayout);
+  }, [detectLayout]);
 
   return (
     <StoreContext.Provider
       value={
         {
-          isPhone: isPhoneMemo,
-          theme: theme,
+          isPhone,
+          isTablet,
+          theme,
         } as AppContext
       }
     >

@@ -1,3 +1,5 @@
+"use client";
+
 // Vendors
 import styled, { css } from "styled-components";
 
@@ -13,17 +15,17 @@ import {
 
 interface HeadingProps {
   weight?: FontWeights;
-  padding?: PaddingTypes;
+  $padding?: PaddingTypes;
   textAlign?: Partial<Record<Breakpoints, TextAlign>>;
   color?: Colors;
 }
 
 const generatePaddingStyles = (
-  padding: PaddingTypes,
+  $padding: PaddingTypes,
   breakpoints: Record<Breakpoints, number>,
   spaces: Record<Spaces, number>
 ) => {
-  return Object.entries(padding).map(([breakpoint, spaceTypes]) => {
+  return Object.entries($padding).map(([breakpoint, spaceTypes]) => {
     const breakpointSize = breakpoints[breakpoint as Breakpoints];
     return css`
       @media (${breakpoint === "sm"
@@ -61,10 +63,10 @@ const Heading = styled.h1<HeadingProps>`
     weight,
     color,
     textAlign,
-    padding,
+    $padding,
     theme: { font, colors, spaces, breakpoints },
   }) => css`
-    ${padding && generatePaddingStyles(padding, breakpoints, spaces)}
+    ${$padding && generatePaddingStyles($padding, breakpoints, spaces)}
     ${textAlign && generateTextAlignStyles(textAlign, breakpoints)}
     ${weight && `font-weight: ${font.weight[weight]};`}
     ${color && `color: ${colors[color]};`}

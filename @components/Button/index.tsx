@@ -1,3 +1,5 @@
+"use client";
+
 // Core
 import type { ComponentPropsWithoutRef, ElementType } from "react";
 
@@ -29,7 +31,6 @@ const defaultStyle = css`
   text-decoration: none;
   display: inline-flex;
   cursor: pointer;
-  text-transform: uppercase;
   transition: all 0.2s;
   border-radius: 5px;
   justify-content: center;
@@ -56,7 +57,7 @@ interface StyledButtonProps {
   isLoading?: boolean;
   isCompleted?: boolean;
   disabled?: boolean;
-  variant?: Colors;
+  $variant?: Colors;
   size?: "small" | "medium" | "large";
   margin?: MarginTypes;
 }
@@ -94,23 +95,23 @@ const CustomButton = styled.button<StyledButtonProps>`
     }
   `}
 
-  ${({ size, theme }) =>
-    size && sizeStyles[size](theme.defaults, theme.breakpoints)}
+  ${({ size, theme: { defaults, breakpoints } }) =>
+    size && sizeStyles[size](defaults, breakpoints)}
 
-  ${({ variant, theme }) =>
-    variant &&
+  ${({ $variant, theme: { colors, font } }) =>
+    $variant &&
     css`
-      background-color: ${theme.colors[variant]};
-      border-color: ${theme.colors[variant]};
-      font-weight: ${theme.font.weight.semiBold};
-      color: ${theme.colors.white};
+      background-color: ${colors[$variant]};
+      border-color: ${colors[$variant]};
+      font-weight: ${font.weight.semiBold};
+      color: ${$variant === "white" ? colors.primary : colors.white};
 
       &:hover {
-        background-color: ${darken(0.1, theme.colors[variant])};
+        background-color: ${darken(0.1, colors[$variant])};
       }
 
       &:active {
-        background-color: ${lighten(0.07, theme.colors[variant])};
+        background-color: ${lighten(0.07, colors[$variant])};
       }
     `}
 
@@ -154,17 +155,17 @@ type ButtonProps<T extends ElementType> = {
   isLoading?: boolean;
   isCompleted?: boolean;
   disabled?: boolean;
-  variant?: Colors;
+  $variant?: Colors;
   size?: "small" | "medium" | "large";
   margin?: MarginTypes;
   children: React.ReactNode;
 } & ComponentPropsWithoutRef<T>;
 
-const Button = <T extends ElementType = "button">({
+const index = <T extends ElementType = "button">({
   as,
   isLoading,
   isCompleted,
-  variant,
+  $variant,
   size,
   margin,
   children,
@@ -175,7 +176,7 @@ const Button = <T extends ElementType = "button">({
       as={as}
       isLoading={isLoading}
       isCompleted={isCompleted}
-      variant={variant}
+      $variant={$variant}
       size={size}
       margin={margin}
       {...rest}
@@ -186,4 +187,4 @@ const Button = <T extends ElementType = "button">({
   );
 };
 
-export { Button };
+export { index as Button };

@@ -8,13 +8,11 @@ export type Colors =
   | "success"
   | "danger"
   | "warning"
-  | "textColor"
+  | "textColorPrimary"
+  | "textColorSecondary"
+  | "gray"
   | "lightGray"
-  | "lighterGray"
-  | "darkGray"
-  | "hoverGray"
-  | "background"
-  | "gray";
+  | "darkGray";
 
 export type FontWeights = "light" | "regular" | "medium" | "semiBold" | "bold";
 
