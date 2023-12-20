@@ -14,7 +14,7 @@ import {
 } from "@types";
 
 interface HeadingProps {
-  weight?: FontWeights;
+  $weight?: FontWeights;
   $padding?: PaddingTypes;
   textAlign?: Partial<Record<Breakpoints, TextAlign>>;
   color?: Colors;
@@ -60,7 +60,7 @@ const generateTextAlignStyles = (
 
 const Heading = styled.h1<HeadingProps>`
   ${({
-    weight,
+    $weight,
     color,
     textAlign,
     $padding,
@@ -68,7 +68,7 @@ const Heading = styled.h1<HeadingProps>`
   }) => css`
     ${$padding && generatePaddingStyles($padding, breakpoints, spaces)}
     ${textAlign && generateTextAlignStyles(textAlign, breakpoints)}
-    ${weight && `font-weight: ${font.weight[weight]};`}
+    ${$weight && `font-weight: ${font.weight[$weight]};`}
     ${color && `color: ${colors[color]};`}
   `}
 `;

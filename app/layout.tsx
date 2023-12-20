@@ -11,7 +11,6 @@ import Providers from "providers";
 import { Store } from "@context";
 import { Layout } from "../@components/Layout";
 
-// If loading a variable font, you don't need to specify the font weight
 const comfortaa = Comfortaa({
   subsets: ["latin"],
 });

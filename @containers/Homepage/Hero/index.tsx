@@ -9,7 +9,7 @@ import { Button, Heading, Wave } from "@components";
 // Vendors
 import styled, { css } from "styled-components";
 
-const Wrapper = styled.div`
+const Hero = styled.div`
   max-width: 1440px;
   margin: auto;
   padding: 20px;
@@ -38,7 +38,7 @@ const Title = styled.h1`
     color: ${colors.white};
 
     @media (max-width: ${breakpoints.md}px) {
-      font-size: 38px;
+      font-size: 42px;
     }
   `}
 `;
@@ -61,12 +61,10 @@ const Mockup = styled.img`
   width: 100%;
 `;
 
-interface Hero {}
-
-const index: FC<Hero> = () => {
+const index: FC = () => {
   return (
     <Wave>
-      <Wrapper>
+      <Hero>
         <ContentWrap>
           <Title>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -93,7 +91,7 @@ const index: FC<Hero> = () => {
         <MockupWrap>
           <Mockup src="/images/hero-mockup.webp" alt="Mockup" />
         </MockupWrap>
-      </Wrapper>
+      </Hero>
     </Wave>
   );
 };

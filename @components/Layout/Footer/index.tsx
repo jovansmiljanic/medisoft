@@ -20,6 +20,12 @@ const Footer = styled.div`
 
 const Logo = styled.img`
   width: 100px;
+
+  ${({ theme: { breakpoints } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      margin-bottom: 20px;
+    }
+  `}
 `;
 
 const Main = styled.div`
@@ -27,12 +33,23 @@ const Main = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 
-  padding: 20px 0;
+  padding: 20px;
+
+  ${({ theme: { breakpoints } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      flex-direction: column;
+    }
+  `}
 `;
 
 const Column = styled.div`
   flex: 0 0 25%;
-  ${({ theme: { defaults, colors, font, ...theme } }) => css``}
+
+  ${({ theme: { defaults, colors, font, breakpoints } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      margin-bottom: 20px;
+    }
+  `}
 `;
 
 const Links = styled.div`

@@ -1,6 +1,6 @@
 // Global containers
-import { Hero } from "@containers";
+import { Homepage } from "@containers";
 
 export default function Home() {
-  return <Hero />;
+  return <Homepage />;
 }

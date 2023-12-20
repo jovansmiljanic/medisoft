@@ -14,16 +14,24 @@ const Secondary = styled.div`
   align-items: center;
   padding: 20px 0;
 
-  ${({ theme: { colors } }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     border-top: 1px solid ${colors.textColorSecondary};
+
+    @media (max-width: ${breakpoints.md}px) {
+      flex-direction: column;
+    }
   `}
 `;
 
 const Links = styled.div`
-  ${({ theme: { colors } }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     a {
       padding-right: 20px;
       color: ${colors.textColorPrimary};
+    }
+
+    @media (max-width: ${breakpoints.md}px) {
+      margin-bottom: 10px;
     }
   `}
 `;
