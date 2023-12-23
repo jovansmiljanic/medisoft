@@ -23,7 +23,7 @@ const commonSettings = {
     sm: 992,
     md: 992,
     lg: 1192,
-    xl: 1440,
+    xl: 1340,
   },
   spaces: {
     0: 0,
@@ -54,6 +54,8 @@ const defaultTheme: ThemeType = {
     danger: "#E04A5A",
     warning: "#FFA726",
 
+    background: "#f8f5ff",
+
     textColorPrimary: "#1e1e1e",
     textColorSecondary: "#8E989F",
 
@@ -76,6 +78,8 @@ const darkTheme: ThemeType = {
     success: "#37C864",
     danger: "#E04A5A",
     warning: "#FFA726",
+
+    background: "#f8f5ff",
 
     textColorPrimary: "#1e1e1e",
     textColorSecondary: "#8E989F",

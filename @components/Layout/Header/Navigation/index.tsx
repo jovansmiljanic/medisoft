@@ -33,10 +33,11 @@ const index: FC<Navigation> = ({ toggled }) => {
         <Logo src="/logo.png" alt="Logo" />
 
         <Links>
-          <Link href="#">Home</Link>
+          <Link href="#home">Home</Link>
           <Link href="#services">Services</Link>
-          <Link href="#about-us">About us</Link>
-          <Link href="#contact-us">Contact us</Link>
+          <Link href="#about-us">About</Link>
+          <Link href="#our-benefits">Benefits</Link>
+          <Link href="#app-integration">Integration</Link>
         </Links>
       </MobileHeader>
     </Navigation>

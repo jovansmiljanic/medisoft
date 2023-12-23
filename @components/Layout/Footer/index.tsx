@@ -14,7 +14,7 @@ import Link from "next/link";
 import styled, { css } from "styled-components";
 
 const Footer = styled.div`
-  max-width: 1440px;
+  max-width: 1340px;
   margin: auto;
 `;
 
@@ -35,7 +35,13 @@ const Main = styled.div`
 
   padding: 20px;
 
-  ${({ theme: { breakpoints } }) => css`
+  ${({ theme: { breakpoints, colors } }) => css`
+    h6 {
+      a {
+        color: ${colors.textColorPrimary};
+      }
+    }
+
     @media (max-width: ${breakpoints.md}px) {
       flex-direction: column;
     }
@@ -81,12 +87,12 @@ const index: FC<Footer> = () => {
               md: { bottom: 2 },
             }}
           >
-            Quick Contact Info
+            Contact Informations
           </Heading>
 
           <div>
             <Heading
-              as="h6"
+              as="h5"
               color="textColorSecondary"
               $padding={{
                 xs: { bottom: 1 },
@@ -94,7 +100,7 @@ const index: FC<Footer> = () => {
                 md: { bottom: 1 },
               }}
             >
-              2118 Thornridge Cir. Syracuse, Connecticut 35624
+              Medisoft
             </Heading>
 
             <Heading
@@ -106,7 +112,7 @@ const index: FC<Footer> = () => {
                 md: { bottom: 1 },
               }}
             >
-              (704) 555-0127
+              <Link href="tel:+38112345678">+381 123 456 78</Link>
             </Heading>
 
             <Heading
@@ -118,7 +124,7 @@ const index: FC<Footer> = () => {
                 md: { bottom: 1 },
               }}
             >
-              duco@gmail.com
+              <Link href="mailto:info@medisoft">info@medisoft</Link>
             </Heading>
           </div>
         </Column>
@@ -132,7 +138,7 @@ const index: FC<Footer> = () => {
               md: { bottom: 2 },
             }}
           >
-            Quick Contact Info
+            Where can you find us
           </Heading>
 
           <div>
@@ -145,7 +151,7 @@ const index: FC<Footer> = () => {
                 md: { bottom: 1 },
               }}
             >
-              2118 Thornridge Cir. Syracuse, Connecticut 35624
+              Some address street
             </Heading>
 
             <Heading
@@ -157,19 +163,7 @@ const index: FC<Footer> = () => {
                 md: { bottom: 1 },
               }}
             >
-              (704) 555-0127
-            </Heading>
-
-            <Heading
-              as="h6"
-              color="textColorSecondary"
-              $padding={{
-                xs: { bottom: 1 },
-                sm: { bottom: 1 },
-                md: { bottom: 1 },
-              }}
-            >
-              duco@gmail.com
+              11000, Belgrade
             </Heading>
           </div>
         </Column>
@@ -187,9 +181,11 @@ const index: FC<Footer> = () => {
           </Heading>
 
           <Links>
-            <Link href="#services">Services</Link>
-            <Link href="#about-us">About us</Link>
-            <Link href="#contact-us">Contact us</Link>
+            <Link href="#home">Home</Link>
+            <Link href="#our-services">Services</Link>
+            <Link href="#about-us">About</Link>
+            <Link href="#our-benefits">Benefits</Link>
+            <Link href="#app-integration">Integration</Link>
           </Links>
         </Column>
       </Main>

@@ -1,19 +1,27 @@
 // Core types
-import { Button, Heading } from "@components";
 import type { FC } from "react";
+
+// Global components
+import { Button, Heading } from "@components";
 
 // Vendors
 import styled, { css } from "styled-components";
+import { BlackMessage, BlueMessage, RedMessage } from "public/svg";
+
+const Wrapper = styled.div`
+  ${({ theme: { colors } }) => css`
+    background-color: ${colors.white};
+  `}
+`;
 
 const AboutUs = styled.div`
-  max-width: 1440px;
+  max-width: 1340px;
   margin: auto;
-  padding: 20px;
+  padding: 80px 20px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 180px;
 
   ${({ theme: { breakpoints } }) => css`
     @media (max-width: ${breakpoints.md}px) {
@@ -54,51 +62,91 @@ const MockupWrap = styled.div`
 
 const Mockup = styled.img`
   width: 100%;
+`;
+
+const List = styled.div`
   ${({ theme: { defaults, colors, font, ...theme } }) => css``}
 `;
 
-interface IAboutUs {}
+const Item = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 
-const index: FC<IAboutUs> = () => {
+  svg {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+  }
+`;
+
+const index: FC = () => {
   return (
-    <AboutUs>
-      <MockupWrap>
-        <Mockup src="/images/about-us-mockup.webp" alt="About us mockup" />
-      </MockupWrap>
+    <Wrapper id="about-us">
+      <AboutUs>
+        <MockupWrap>
+          <Mockup src="/images/about-us-mockup.webp" alt="About us mockup" />
+        </MockupWrap>
 
-      <ContentWrap>
-        <Heading
-          as="h5"
-          color="primary"
-          $padding={{
-            xs: { top: 2, bottom: 2 },
-            sm: { top: 2, bottom: 2 },
-            md: { top: 2, bottom: 2 },
-          }}
-        >
-          ABOUT US
-        </Heading>
+        <ContentWrap>
+          <Heading
+            as="h5"
+            color="primary"
+            $padding={{
+              xs: { top: 2, bottom: 2 },
+              sm: { top: 2, bottom: 2 },
+              md: { top: 2, bottom: 2 },
+            }}
+          >
+            ABOUT US
+          </Heading>
 
-        <Title>
-          What Can Sofbox <br /> Do For You?
-        </Title>
+          <Title>Innovative Software for Modern Healthcare</Title>
 
-        <Heading
-          as="h6"
-          color="textColorSecondary"
-          $padding={{
-            xs: { top: 2, bottom: 2 },
-            sm: { top: 2, bottom: 2 },
-            md: { top: 2, bottom: 2 },
-          }}
-        >
-          It is a long established fact that a reader will be distracted
-          <br /> by the readable content of a page when looking at its layout.
-        </Heading>
+          <Heading
+            as="h6"
+            color="textColorSecondary"
+            $padding={{
+              xs: { top: 2, bottom: 2 },
+              sm: { top: 2, bottom: 2 },
+              md: { top: 2, bottom: 2 },
+            }}
+          >
+            At Medisoft, we are dedicated to revolutionizing healthcare through
+            technology. Our software is meticulously crafted to meet the
+            evolving needs of medical professionals and patients, ensuring a
+            seamless, efficient, and secure healthcare experience.
+          </Heading>
 
-        <Button $variant="primary">Read more</Button>
-      </ContentWrap>
-    </AboutUs>
+          <List>
+            <Item>
+              <RedMessage />
+              <Heading as="h6" $weight="semiBold">
+                User-Friendly Interface
+              </Heading>
+            </Item>
+
+            <Item>
+              <BlackMessage />
+              <Heading as="h6" $weight="semiBold">
+                Comprehensive Integration
+              </Heading>
+            </Item>
+
+            <Item>
+              <BlueMessage />
+              <Heading as="h6" $weight="semiBold">
+                Data Security and Privacy
+              </Heading>
+            </Item>
+          </List>
+
+          <Button $variant="primary" as="a" href="#our-benefits">
+            Read more
+          </Button>
+        </ContentWrap>
+      </AboutUs>
+    </Wrapper>
   );
 };
 

@@ -10,14 +10,16 @@ import { Button, Heading, Wave } from "@components";
 import styled, { css } from "styled-components";
 
 const Hero = styled.div`
-  max-width: 1440px;
+  max-width: 1340px;
   margin: auto;
   padding: 20px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 180px;
+  padding-top: 150px;
+  position: relative;
+  z-index: 3;
 
   ${({ theme: { breakpoints } }) => css`
     @media (max-width: ${breakpoints.md}px) {
@@ -30,7 +32,7 @@ const Hero = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 60px;
+  font-size: 50px;
   line-height: 1.2;
 
   ${({ theme: { breakpoints, font, colors } }) => css`
@@ -44,7 +46,7 @@ const Title = styled.h1`
 `;
 
 const ContentWrap = styled.div`
-  flex: 0 0 50%;
+  flex: 0 0 45%;
 
   ${({ theme: { breakpoints } }) => css`
     @media (max-width: ${breakpoints.md}px) {
@@ -64,10 +66,10 @@ const Mockup = styled.img`
 const index: FC = () => {
   return (
     <Wave>
-      <Hero>
+      <Hero id="#home">
         <ContentWrap>
           <Title>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Revolutionizing Healthcare with Advanced Digital Solutions
           </Title>
 
           <Heading
@@ -79,13 +81,15 @@ const index: FC = () => {
               md: { top: 2, bottom: 2 },
             }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-            quisquam voluptatum porro voluptate, tempore reprehenderit, rem,
-            exercitationem perferendis illum ducimus consequuntur et! Beatae
-            aliquam quas accusamus dolore laudantium repellat ex!
+            Discover Medisoft's innovative solutions for efficient Appointment
+            Scheduling, comprehensive Patient Records Management, and advanced
+            Reporting and Analytics. Transforming healthcare with technology for
+            better patient care and practice management.
           </Heading>
 
-          <Button $variant="white">Learn more</Button>
+          <Button $variant="white" as="a" href="#our-services">
+            Learn more
+          </Button>
         </ContentWrap>
 
         <MockupWrap>

@@ -10,6 +10,7 @@ export type Colors =
   | "warning"
   | "textColorPrimary"
   | "textColorSecondary"
+  | "background"
   | "gray"
   | "lightGray"
   | "darkGray";

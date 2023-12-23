@@ -14,9 +14,9 @@ import type { FC } from "react";
 import styled, { css } from "styled-components";
 
 const Services = styled.div`
-  max-width: 1440px;
+  max-width: 1340px;
   margin: auto;
-  padding: 20px;
+  padding: 50px 20px 80px 20px;
 
   display: flex;
   justify-content: space-between;
@@ -38,6 +38,7 @@ const Title = styled.h1`
   font-size: 50px;
   line-height: 1.2;
   padding: 10px 0;
+  text-align: center;
 
   ${({ theme: { breakpoints, font } }) => css`
     font-weight: ${font.weight.medium};
@@ -65,6 +66,8 @@ const Box = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
+
+  border-radius: 10px;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
@@ -102,52 +105,50 @@ interface IServices {}
 const index: FC<IServices> = () => {
   const services = [
     {
-      title: "Web Development",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+      title: "Appointment Scheduling",
+      description: "Effortless booking and management of patient appointments.",
       icon: <Folder />,
     },
     {
-      title: "Web Development",
+      title: "Patient Records Management",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+        "Secure, comprehensive digital records for optimal patient care.",
       icon: <Wallet />,
     },
     {
-      title: "Web Development",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+      title: "Reporting and Analytics",
+      description: "Advanced analytics for insightful healthcare decisions.",
       icon: <Bag />,
     },
     {
-      title: "Web Development",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+      title: "Telemedicine Integration",
+      description: "Connect with patients remotely for convenient care.",
       icon: <Scan />,
     },
     {
-      title: "Web Development",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+      title: "Billing and Insurance Processing",
+      description: "Streamlined handling of billing and insurance claims.",
       icon: <Management />,
     },
     {
-      title: "Web Development",
+      title: "Customizable Dashboard",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+        "Tailor your medical practice with our customizable interface.",
       icon: <Notification />,
     },
   ];
 
   return (
-    <Services>
+    <Services id="our-services">
       <Heading as="h5" color="primary">
         OUR SERVICES
       </Heading>
-      <Title>Effortless Solutions For All Challenges</Title>
+
+      <Title>Empowering Healthcare with Our Diverse Services</Title>
+
       <Heading as="h6" color="textColorSecondary">
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout.
+        Explore our range of digital solutions designed for excellence in
+        healthcare management and patient care.
       </Heading>
 
       <Boxes>

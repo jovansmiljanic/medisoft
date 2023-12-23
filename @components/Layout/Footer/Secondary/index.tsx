@@ -42,9 +42,11 @@ const index: FC = () => {
   return (
     <Secondary>
       <Links>
-        <Link href="#services">Services</Link>
-        <Link href="#about-us">About us</Link>
-        <Link href="#contact-us">Contact us</Link>
+        <Link href="#home">Home</Link>
+        <Link href="#our-services">Services</Link>
+        <Link href="#about-us">About</Link>
+        <Link href="#our-benefits">Benefits</Link>
+        <Link href="#app-integration">Integration</Link>
       </Links>
 
       <Heading as="h6" color="primary">

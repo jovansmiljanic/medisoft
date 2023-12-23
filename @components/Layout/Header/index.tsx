@@ -22,20 +22,21 @@ import { Button } from "@components";
 import { Navigation } from "./Navigation";
 
 const Wrapper = styled.div`
+  ${({ theme: { colors } }) => css`
+    background-color: ${colors.white};
+  `}
+`;
+const Header = styled.div`
   position: relative;
   z-index: 100;
 
-  max-width: 1440px;
+  max-width: 1340px;
   margin: auto;
   padding: 20px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  ${({ theme: { colors } }) => css`
-    background-color: ${colors.white};
-  `}
 `;
 
 const Toggler = styled.div`
@@ -103,29 +104,32 @@ const index: FC = () => {
 
   return (
     <Wrapper>
-      <Link href="/">
-        <Logo src="/logo.png" alt="" />
-      </Link>
+      <Header>
+        <Link href="/">
+          <Logo src="/logo.png" alt="" />
+        </Link>
 
-      {!isTablet && (
-        <Nav>
-          <Link href="#">Home</Link>
-          <Link href="#services">Services</Link>
-          <Link href="#about-us">About us</Link>
-          <Link href="#contact-us">Contact us</Link>
+        {!isTablet && (
+          <Nav>
+            <Link href="#home">Home</Link>
+            <Link href="#our-services">Services</Link>
+            <Link href="#about-us">About</Link>
+            <Link href="#our-benefits">Benefits</Link>
+            <Link href="#app-integration">Integration</Link>
 
-          <Button $variant="primary" size="small">
-            Get a quote
-          </Button>
-        </Nav>
-      )}
+            <Button $variant="primary" size="small">
+              Get a quote
+            </Button>
+          </Nav>
+        )}
 
-      {isTablet && (
-        <>
-          <Navigation toggled={toggled} />
-          <Toggler onClick={() => setToggle(!toggled)} />
-        </>
-      )}
+        {isTablet && (
+          <>
+            <Navigation toggled={toggled} />
+            <Toggler onClick={() => setToggle(!toggled)} />
+          </>
+        )}
+      </Header>
     </Wrapper>
   );
 };

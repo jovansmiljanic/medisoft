@@ -17,6 +17,8 @@ export interface ThemeType {
     danger: string;
     warning: string;
 
+    background: string;
+
     textColorPrimary: string;
     textColorSecondary: string;
 
