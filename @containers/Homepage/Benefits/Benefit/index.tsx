@@ -2,6 +2,7 @@
 
 // Vendors
 import styled, { css } from "styled-components";
+import useTranslation from "next-translate/useTranslation";
 
 // Global components
 import { Heading } from "@components";
@@ -36,108 +37,97 @@ const ContentImage = styled.img`
   width: 100%;
 `;
 
-export const benefitContent = [
-  <Benefit>
-    <ImageWrap>
-      <ContentImage src="/images/benefit-1.webp" alt="Benefit 1" />
-    </ImageWrap>
+export const benefitContent = () => {
+  const { t } = useTranslation();
 
-    <BenefitContent>
-      <Heading
-        as="h1"
-        $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
-      >
-        Streamlined Operations
-      </Heading>
+  return [
+    <Benefit>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-1.webp" alt="Benefit 1" />
+      </ImageWrap>
 
-      <Heading as="h6">
-        Our software drastically reduces administrative workload, allowing more
-        focus on patient care.
-      </Heading>
+      <BenefitContent>
+        <Heading
+          as="h1"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("home:benefit1Title")}
+        </Heading>
 
-      <ul>
-        <li>Faster appointment scheduling</li>
-        <li>Automated patient record updates</li>
-      </ul>
-    </BenefitContent>
-  </Benefit>,
+        <Heading as="h6">{t("home:benefit1Description")}</Heading>
 
-  <Benefit>
-    <BenefitContent>
-      <Heading as="h1">Empowering Patients</Heading>
+        <ul>
+          <li>{t("home:benefit1ListItem1")}</li>
+          <li>{t("home:benefit1ListItem2")}</li>
+        </ul>
+      </BenefitContent>
+    </Benefit>,
 
-      <Heading as="h6">
-        Easy access to health records and appointment scheduling fosters patient
-        involvement in their own care.
-      </Heading>
+    <Benefit>
+      <BenefitContent>
+        <Heading as="h1">{t("home:benefit2Title")}</Heading>
 
-      <ul>
-        <li>User-friendly patient portal</li>
-        <li>Enhanced communication tools</li>
-      </ul>
-    </BenefitContent>
+        <Heading as="h6">{t("home:benefit2Description")}</Heading>
 
-    <ImageWrap>
-      <ContentImage src="/images/benefit-2.webp" alt="Benefit 1" />
-    </ImageWrap>
-  </Benefit>,
+        <ul>
+          <li>{t("home:benefit2ListItem1")}</li>
+          <li>{t("home:benefit2ListItem2")}</li>
+        </ul>
+      </BenefitContent>
 
-  <Benefit>
-    <ImageWrap>
-      <ContentImage src="/images/benefit-3.webp" alt="Benefit 1" />
-    </ImageWrap>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-2.webp" alt="Benefit 1" />
+      </ImageWrap>
+    </Benefit>,
 
-    <BenefitContent>
-      <Heading as="h1">Informed Healthcare</Heading>
+    <Benefit>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-3.webp" alt="Benefit 1" />
+      </ImageWrap>
 
-      <Heading as="h6">
-        Leverage comprehensive analytics for better medical decision-making and
-        practice management.
-      </Heading>
+      <BenefitContent>
+        <Heading as="h1">{t("home:benefit3Title")}</Heading>
 
-      <ul>
-        <li>Advanced reporting features</li>
-        <li>Real-time data analysis</li>
-      </ul>
-    </BenefitContent>
-  </Benefit>,
+        <Heading as="h6">{t("home:benefit3Description")}</Heading>
 
-  <Benefit>
-    <BenefitContent>
-      <Heading as="h1">Reducing Operational Costs</Heading>
+        <ul>
+          <li>{t("home:benefit3ListItem1")}</li>
+          <li>{t("home:benefit3ListItem2")}</li>
+        </ul>
+      </BenefitContent>
+    </Benefit>,
 
-      <Heading as="h6">
-        Our software minimizes unnecessary expenses, optimizing financial
-        performance.
-      </Heading>
+    <Benefit>
+      <BenefitContent>
+        <Heading as="h1">{t("home:benefit4Title")}</Heading>
 
-      <ul>
-        <li>Streamlined billing processes</li>
-        <li>Efficient resource management</li>
-      </ul>
-    </BenefitContent>
+        <Heading as="h6">{t("home:benefit4Description")}</Heading>
 
-    <ImageWrap>
-      <ContentImage src="/images/benefit-4.webp" alt="Benefit 1" />
-    </ImageWrap>
-  </Benefit>,
+        <ul>
+          <li>{t("home:benefit4ListItem1")}</li>
+          <li>{t("home:benefit4ListItem2")}</li>
+        </ul>
+      </BenefitContent>
 
-  <Benefit>
-    <ImageWrap>
-      <ContentImage src="/images/benefit-5.webp" alt="Benefit 1" />
-    </ImageWrap>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-4.webp" alt="Benefit 1" />
+      </ImageWrap>
+    </Benefit>,
 
-    <BenefitContent>
-      <Heading as="h1">Safeguarding Patient Data</Heading>
-      <Heading as="h6">
-        We prioritize the highest standards of data security and privacy
-        protection.
-      </Heading>
+    <Benefit>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-5.webp" alt="Benefit 1" />
+      </ImageWrap>
 
-      <ul>
-        <li>State-of-the-art encryption</li>
-        <li>Regular security updates and compliance checks</li>
-      </ul>
-    </BenefitContent>
-  </Benefit>,
-];
+      <BenefitContent>
+        <Heading as="h1">{t("home:benefit5Title")}</Heading>
+        <Heading as="h6">{t("home:benefit5Description")}</Heading>
+
+        <ul>
+          <li>{t("home:benefit5ListItem1")}</li>
+          <li>{t("home:benefit5ListItem2")}</li>
+        </ul>
+      </BenefitContent>
+    </Benefit>,
+  ];
+};

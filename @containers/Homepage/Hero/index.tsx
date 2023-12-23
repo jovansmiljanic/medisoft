@@ -8,6 +8,7 @@ import { Button, Heading, Wave } from "@components";
 
 // Vendors
 import styled, { css } from "styled-components";
+import useTranslation from "next-translate/useTranslation";
 
 const Hero = styled.div`
   max-width: 1340px;
@@ -64,13 +65,13 @@ const Mockup = styled.img`
 `;
 
 const index: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Wave>
       <Hero id="#home">
         <ContentWrap>
-          <Title>
-            Revolutionizing Healthcare with Advanced Digital Solutions
-          </Title>
+          <Title>{t("home:heroTitle")}</Title>
 
           <Heading
             as="h6"
@@ -81,14 +82,11 @@ const index: FC = () => {
               md: { top: 2, bottom: 2 },
             }}
           >
-            Discover Medisoft's innovative solutions for efficient Appointment
-            Scheduling, comprehensive Patient Records Management, and advanced
-            Reporting and Analytics. Transforming healthcare with technology for
-            better patient care and practice management.
+            {t("home:heroDescription")}
           </Heading>
 
           <Button $variant="white" as="a" href="#our-services">
-            Learn more
+            {t("home:heroCtaLabel")}
           </Button>
         </ContentWrap>
 

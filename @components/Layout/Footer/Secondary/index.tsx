@@ -12,7 +12,7 @@ const Secondary = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px;
 
   ${({ theme: { colors, breakpoints } }) => css`
     border-top: 1px solid ${colors.textColorSecondary};
@@ -24,9 +24,12 @@ const Secondary = styled.div`
 `;
 
 const Links = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
   ${({ theme: { colors, breakpoints } }) => css`
     a {
-      padding-right: 20px;
+      padding: 0 10px;
       color: ${colors.textColorPrimary};
     }
 

@@ -9,6 +9,7 @@ import { sendEmail } from "../../../@utils/server";
 
 // Vendors
 import styled, { css } from "styled-components";
+import useTranslation from "next-translate/useTranslation";
 
 const Wrapper = styled.div`
   padding: 80px 20px;
@@ -97,16 +98,14 @@ const Form = styled.form`
   }
 `;
 
-interface ISignUp {}
+const index: FC = () => {
+  const { t } = useTranslation();
 
-const index: FC<ISignUp> = () => {
   return (
     <Wrapper>
       <SignUp>
         <Content>
-          <Title>
-            Medisoft Insights: Stay Updated on Healthcare Innovation
-          </Title>
+          <Title>{t("home:signUpTitle")}</Title>
 
           <Form
             action={async formData => {
@@ -122,7 +121,7 @@ const index: FC<ISignUp> = () => {
             />
 
             <Button $variant="white" type="submit">
-              Sign up
+              {t("home:signUpCtaLabel")}
             </Button>
           </Form>
         </Content>

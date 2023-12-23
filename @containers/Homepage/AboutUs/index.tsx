@@ -7,6 +7,7 @@ import { Button, Heading } from "@components";
 // Vendors
 import styled, { css } from "styled-components";
 import { BlackMessage, BlueMessage, RedMessage } from "public/svg";
+import useTranslation from "next-translate/useTranslation";
 
 const Wrapper = styled.div`
   ${({ theme: { colors } }) => css`
@@ -81,6 +82,8 @@ const Item = styled.div`
 `;
 
 const index: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper id="about-us">
       <AboutUs>
@@ -98,10 +101,10 @@ const index: FC = () => {
               md: { top: 2, bottom: 2 },
             }}
           >
-            ABOUT US
+            {t("home:aboutUsPreTitle")}
           </Heading>
 
-          <Title>Innovative Software for Modern Healthcare</Title>
+          <Title>{t("home:aboutUsTitle")}</Title>
 
           <Heading
             as="h6"
@@ -112,37 +115,34 @@ const index: FC = () => {
               md: { top: 2, bottom: 2 },
             }}
           >
-            At Medisoft, we are dedicated to revolutionizing healthcare through
-            technology. Our software is meticulously crafted to meet the
-            evolving needs of medical professionals and patients, ensuring a
-            seamless, efficient, and secure healthcare experience.
+            {t("home:aboutUsDescription")}
           </Heading>
 
           <List>
             <Item>
               <RedMessage />
               <Heading as="h6" $weight="semiBold">
-                User-Friendly Interface
+                {t("home:aboutUslistItem1")}
               </Heading>
             </Item>
 
             <Item>
               <BlackMessage />
               <Heading as="h6" $weight="semiBold">
-                Comprehensive Integration
+                {t("home:aboutUslistItem2")}
               </Heading>
             </Item>
 
             <Item>
               <BlueMessage />
               <Heading as="h6" $weight="semiBold">
-                Data Security and Privacy
+                {t("home:aboutUslistItem3")}
               </Heading>
             </Item>
           </List>
 
           <Button $variant="primary" as="a" href="#our-benefits">
-            Read more
+            {t("home:aboutUsCtaLabel")}
           </Button>
         </ContentWrap>
       </AboutUs>

@@ -6,6 +6,7 @@ import { Button, Heading } from "@components";
 
 // Vendors
 import styled, { css } from "styled-components";
+import useTranslation from "next-translate/useTranslation";
 
 const Integration = styled.div`
   max-width: 1340px;
@@ -50,17 +51,17 @@ const Wrap = styled.div`
   `}
 `;
 
-interface IIntegration {}
+const index: FC = () => {
+  const { t } = useTranslation();
 
-const index: FC<IIntegration> = () => {
   return (
     <Integration id="app-integration">
       <Wrap>
         <Heading as="h5" color="primary">
-          APP INTEGRATION
+          {t("home:integrationPreTitle")}
         </Heading>
 
-        <Title>Seamless Integration for Comprehensive Care</Title>
+        <Title>{t("home:integrationTitle")}</Title>
 
         <Heading
           as="h6"
@@ -71,15 +72,10 @@ const index: FC<IIntegration> = () => {
             md: { bottom: 2 },
           }}
         >
-          Medisoft's software seamlessly integrates with a wide range of
-          healthcare applications and systems, ensuring a unified and efficient
-          workflow. Our robust integration capabilities allow for effortless
-          synchronization with existing medical tools, enhancing both patient
-          care and practice management. Embrace the full potential of digital
-          healthcare with Medisoft's versatile app integration.
+          {t("home:integrationDescription")}
         </Heading>
 
-        <Button $variant="primary">Explore more</Button>
+        <Button $variant="primary">{t("home:integrationCtaLabel")}</Button>
       </Wrap>
     </Integration>
   );

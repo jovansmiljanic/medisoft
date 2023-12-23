@@ -1,5 +1,6 @@
 // Core types
 import { Heading } from "@components";
+import useTranslation from "next-translate/useTranslation";
 import {
   Bag,
   Folder,
@@ -44,6 +45,7 @@ const Title = styled.h1`
     font-weight: ${font.weight.medium};
 
     @media (max-width: ${breakpoints.md}px) {
+      text-align: left;
       font-size: 38px;
     }
   `}
@@ -100,40 +102,38 @@ const IconWrap = styled.div`
   `}
 `;
 
-interface IServices {}
+const index: FC = () => {
+  const { t } = useTranslation();
 
-const index: FC<IServices> = () => {
   const services = [
     {
-      title: "Appointment Scheduling",
-      description: "Effortless booking and management of patient appointments.",
+      title: t("home:ourServicesItem1Title"),
+      description: t("home:ourServicesItem1Description"),
       icon: <Folder />,
     },
     {
-      title: "Patient Records Management",
-      description:
-        "Secure, comprehensive digital records for optimal patient care.",
+      title: t("home:ourServicesItem2Title"),
+      description: t("home:ourServicesItem2Description"),
       icon: <Wallet />,
     },
     {
-      title: "Reporting and Analytics",
-      description: "Advanced analytics for insightful healthcare decisions.",
+      title: t("home:ourServicesItem3Title"),
+      description: t("home:ourServicesItem3Description"),
       icon: <Bag />,
     },
     {
-      title: "Telemedicine Integration",
-      description: "Connect with patients remotely for convenient care.",
+      title: t("home:ourServicesItem4Title"),
+      description: t("home:ourServicesItem4Description"),
       icon: <Scan />,
     },
     {
-      title: "Billing and Insurance Processing",
-      description: "Streamlined handling of billing and insurance claims.",
+      title: t("home:ourServicesItem5Title"),
+      description: t("home:ourServicesItem5Description"),
       icon: <Management />,
     },
     {
-      title: "Customizable Dashboard",
-      description:
-        "Tailor your medical practice with our customizable interface.",
+      title: t("home:ourServicesItem6Title"),
+      description: t("home:ourServicesItem6Description"),
       icon: <Notification />,
     },
   ];
@@ -141,14 +141,13 @@ const index: FC<IServices> = () => {
   return (
     <Services id="our-services">
       <Heading as="h5" color="primary">
-        OUR SERVICES
+        {t("home:ourServicesPreTitle")}
       </Heading>
 
-      <Title>Empowering Healthcare with Our Diverse Services</Title>
+      <Title>{t("home:ourServicesTitle")}</Title>
 
       <Heading as="h6" color="textColorSecondary">
-        Explore our range of digital solutions designed for excellence in
-        healthcare management and patient care.
+        {t("home:ourServicesDescription")}
       </Heading>
 
       <Boxes>

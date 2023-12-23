@@ -11,6 +11,7 @@ import styled, { css, keyframes } from "styled-components";
 
 // Benefit content
 import { benefitContent } from "./Benefit";
+import useTranslation from "next-translate/useTranslation";
 
 const Benefits = styled.div`
   max-width: 1340px;
@@ -40,6 +41,7 @@ const Title = styled.h1`
 
     @media (max-width: ${breakpoints.md}px) {
       font-size: 38px;
+      text-align: left;
     }
   `}
 `;
@@ -82,6 +84,7 @@ const Label = styled.div<{ $activeItem: boolean }>`
   cursor: pointer;
 
   font-size: 18px;
+  text-align: center;
 
   ${({ $activeItem, theme: { breakpoints } }) => css`
     &:hover {
@@ -114,28 +117,26 @@ const Label = styled.div<{ $activeItem: boolean }>`
 
 const ContentModal = styled.div``;
 
-interface IBenefits {}
+const index: FC = () => {
+  const { t } = useTranslation();
 
-const index: FC<IBenefits> = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const titles = [
-    "Enhanced Efficiency",
-    "Improved Patient Engagement",
-    "Data-Driven Decisions",
-    "Cost-Effective Solutions",
-    "Robust Security",
+    t("home:benefit1Label"),
+    t("home:benefit2Label"),
+    t("home:benefit3Label"),
+    t("home:benefit4Label"),
+    t("home:benefit5Label"),
   ];
 
   return (
     <Benefits id="our-benefits">
       <Heading as="h5" color="primary">
-        OUR BENEFITS
+        {t("home:benefitsPreTitle")}
       </Heading>
 
-      <Title>
-        The Medisoft Advantage: Enhancing Your Healthcare Experience
-      </Title>
+      <Title>{t("home:benefitsTitle")}</Title>
 
       <Labels>
         {titles.map((title, index) => (
@@ -149,7 +150,7 @@ const index: FC<IBenefits> = () => {
         ))}
       </Labels>
 
-      <ContentModal>{benefitContent[activeIndex]}</ContentModal>
+      <ContentModal>{benefitContent()[activeIndex]}</ContentModal>
     </Benefits>
   );
 };

@@ -1,0 +1,76 @@
+{
+  "heroTitle": "Revolucija u zdravstvu sa naprednim digitalnim rešenjima",
+  "heroDescription": "Otkrijte inovativna rešenja Medisofta za efikasno zakazivanje pregleda, sveobuhvatno upravljanje zdravstvenim kartonima pacijenata i naprednu analitiku i izveštavanje. Transformišemo zdravstvo tehnologijom za bolju brigu o pacijentima i upravljanje praksom.",
+  "heroCtaLabel": "Saznajte više",
+
+  "ourServicesPreTitle": "NAŠE USLUGE",
+  "ourServicesTitle": "Osnaživanje zdravstva našim raznovrsnim uslugama",
+  "ourServicesDescription": "Istražite naš spektar digitalnih rešenja dizajniranih za izvrsnost u upravljanju zdravstvenom brigom i negom pacijenata.",
+
+  "ourServicesItem1Title": "Zakazivanje Pregleda",
+  "ourServicesItem1Description": "Nesmetano zakazivanje i upravljanje pregledima pacijenata.",
+
+  "ourServicesItem2Title": "Upravljanje Zdravstvenim Kartonima",
+  "ourServicesItem2Description": "Sigurni, sveobuhvatni digitalni zapisi za optimalnu brigu o pacijentima.",
+
+  "ourServicesItem3Title": "Analitika i Izveštavanje",
+  "ourServicesItem3Description": "Napredna analitika za uvidljive odluke u zdravstvu.",
+
+  "ourServicesItem4Title": "Integracija Telemedicine",
+  "ourServicesItem4Description": "Povežite se sa pacijentima na daljinu za udobnu negu.",
+
+  "ourServicesItem5Title": "Obračun i Obrada Osiguranja",
+  "ourServicesItem5Description": "Pojednostavljeno rukovanje računima i zahtevima osiguranja.",
+
+  "ourServicesItem6Title": "Prilagodljiva Kontrolna Tabla",
+  "ourServicesItem6Description": "Prilagodite svoju medicinsku praksu sa našim prilagodljivim interfejsom.",
+
+  "aboutUsPreTitle": "O NAMA",
+  "aboutUsTitle": "Inovativni softver za moderno zdravstvo",
+  "aboutUsDescription": "U Medisoftu smo posvećeni revoluciji u zdravstvu kroz tehnologiju. Naš softver je pažljivo kreiran da zadovolji razvijajuće potrebe medicinskih stručnjaka i pacijenata, osiguravajući besprekorno, efikasno i sigurno zdravstveno iskustvo.",
+  "aboutUslistItem1": "Korisnički Prijateljski Interfejs",
+  "aboutUslistItem2": "Sveobuhvatna Integracija",
+  "aboutUslistItem3": "Sigurnost i Privatnost Podataka",
+  "aboutUsCtaLabel": "Pročitajte više",
+
+  "benefitsPreTitle": "NAŠE PREDNOSTI",
+  "benefitsTitle": "Prednost Medisofta: Unapređenje Vašeg Zdravstvenog Iskustva",
+
+  "benefit1Label": "Povećana Efikasnost",
+  "benefit1Title": "Strukturisane Operacije",
+  "benefit1Description": "Naš softver drastično smanjuje administrativni rad, omogućavajući više fokusiranja na negu pacijenata.",
+  "benefit1ListItem1": "Brže zakazivanje pregleda",
+  "benefit1ListItem2": "Automatizovano ažuriranje zdravstvenih kartona",
+
+  "benefit2Label": "Poboljšano Angažovanje Pacijenata",
+  "benefit2Title": "Osnaživanje Pacijenata",
+  "benefit2Description": "Lak pristup zdravstvenim kartonima i zakazivanju pregleda podstiče uključivanje pacijenata u sopstvenu negu.",
+  "benefit2ListItem1": "Korisnički prijateljski portal pacijenta",
+  "benefit2ListItem2": "Poboljšani komunikacijski alati",
+
+  "benefit3Label": "Odluke Zasnovane na Podacima",
+  "benefit3Title": "Informisano Zdravstvo",
+  "benefit3Description": "Iskoristite sveobuhvatnu analitiku za bolje medicinsko odlučivanje i upravljanje praksom.",
+  "benefit3ListItem1": "Napredne funkcije izveštavanja",
+  "benefit3ListItem2": "Analiza podataka u realnom vremenu",
+
+  "benefit4Label": "Troškovno Efikasna Rešenja",
+  "benefit4Title": "Smanjenje Operativnih Troškova",
+  "benefit4Description": "Naš softver minimizira nepotrebne troškove, optimizirajući finansijske performanse.",
+  "benefit4ListItem1": "Strukturisani procesi naplate",
+  "benefit4ListItem2": "Efikasno upravljanje resursima",
+
+  "benefit5Label": "Robusna Sigurnost",
+  "benefit5Title": "Zaštita Podataka Pacijenata",
+  "benefit5Description": "Prioritet nam je najviši standard sigurnosti podataka i zaštite privatnosti.",
+  "benefit5ListItem1": "Najmodernija enkripcija",
+  "benefit5ListItem2": "Redovna sigurnosna ažuriranja i provere usaglašenosti",
+
+  "integrationPreTitle": "INTEGRACIJA APLIKACIJE",
+  "integrationTitle": "Nesmetana Integracija za Sveobuhvatnu Negu",
+  "integrationDescription": "Softver Medisofta se nesmetano integriše sa širokim spektrom zdravstvenih aplikacija i sistema, osiguravajući ujedinjen i efikasan radni tok. Naše snažne sposobnosti integracije omogućavaju lako sinhronizovanje sa postojećim medicinskim alatima, poboljšavajući i negu pacijenata i upravljanje praksom. Iskoristite puni potencijal digitalnog zdravstva sa svestranom integracijom aplikacija Medisofta.",
+  "integrationCtaLabel": "Istražite više",
+
+  "signUpTitle": "Medisoft Uvidi: Budite U toku sa Inovacijama u Zdravstvu",
+  "signUpCtaLabel": "Prijavite se"
+}
