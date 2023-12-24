@@ -1,5 +1,5 @@
 // Global styles
-import GlobalStyle from "globalStyles";
+import GlobalStyle from "@styles/globalStyles";
 
 // Fonts
 import { Comfortaa } from "next/font/google";
@@ -9,7 +9,10 @@ import Providers from "providers";
 
 // Store
 import { Store } from "@context";
-import { Layout } from "../@components/Layout";
+
+import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
+import { notFound } from "next/navigation";
+import { Layout } from "@components";
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -17,11 +20,21 @@ const comfortaa = Comfortaa({
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: any;
 }) {
+  const locale = useLocale();
+
+  if (params.locale !== locale) {
+    return notFound();
+  }
+
+  const messages = useMessages();
+
   return (
-    <html lang="en" className={comfortaa.className}>
+    <html lang={locale} className={comfortaa.className}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
@@ -35,9 +48,11 @@ export default function RootLayout({
         <Providers>
           <GlobalStyle />
 
-          <Store>
-            <Layout>{children}</Layout>
-          </Store>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Store>
+              <Layout>{children}</Layout>
+            </Store>
+          </NextIntlClientProvider>
         </Providers>
       </body>
     </html>

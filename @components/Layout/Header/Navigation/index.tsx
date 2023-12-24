@@ -1,13 +1,12 @@
 "use client";
 
 // Core types
-import { useMemo, type FC } from "react";
+import { type FC, useMemo } from "react";
 
 // Vendors
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-// Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
 
 interface Navigation {
@@ -15,6 +14,8 @@ interface Navigation {
 }
 
 const index: FC<Navigation> = ({ toggled }) => {
+  const t = useTranslations();
+
   const menuVariants = useMemo(
     () => ({
       open: { x: 300, transition: { ease: "easeIn", duration: 0.4 } },
@@ -33,11 +34,11 @@ const index: FC<Navigation> = ({ toggled }) => {
         <Logo src="/logo.png" alt="Logo" />
 
         <Links>
-          <Link href="#home">Home</Link>
-          <Link href="#services">Services</Link>
-          <Link href="#about-us">About</Link>
-          <Link href="#our-benefits">Benefits</Link>
-          <Link href="#app-integration">Integration</Link>
+          <Link href="#home">{t("homeLabel")}</Link>
+          <Link href="#our-services">{t("servicesLabel")}</Link>
+          <Link href="#about-us">{t("aboutLabel")}</Link>
+          <Link href="#our-benefits">{t("benefitLabel")}</Link>
+          <Link href="#app-integration">{t("integrationLabel")}</Link>
         </Links>
       </MobileHeader>
     </Navigation>

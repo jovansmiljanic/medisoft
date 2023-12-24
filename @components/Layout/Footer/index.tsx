@@ -6,77 +6,22 @@ import type { FC } from "react";
 // Global components
 import { Heading } from "@components";
 
-// Local components
-import { Secondary } from "./Secondary";
-
 // Vendors
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
 
-const Footer = styled.div`
-  max-width: 1340px;
-  margin: auto;
-`;
+const index: FC = () => {
+  // Translations
+  const t = useTranslations();
 
-const Logo = styled.img`
-  width: 100px;
+  // Get current year
+  const year = new Date().getFullYear();
 
-  ${({ theme: { breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      margin-bottom: 20px;
-    }
-  `}
-`;
-
-const Main = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  padding: 20px;
-
-  ${({ theme: { breakpoints, colors } }) => css`
-    h6 {
-      a {
-        color: ${colors.textColorPrimary};
-      }
-    }
-
-    @media (max-width: ${breakpoints.md}px) {
-      flex-direction: column;
-    }
-  `}
-`;
-
-const Column = styled.div`
-  flex: 0 0 25%;
-
-  ${({ theme: { defaults, colors, font, breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      margin-bottom: 20px;
-    }
-  `}
-`;
-
-const Links = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ${({ theme: { defaults, colors, font, ...theme } }) => css`
-    a {
-      padding: 7px 0;
-      color: ${colors.textColorSecondary};
-    }
-  `}
-`;
-
-interface Footer {}
-
-const index: FC<Footer> = () => {
   return (
     <Footer>
       <Main>
-        <Logo src="/logo.png" alt="" />
+        <Logo src="/logo.png" alt="Medisoft" />
 
         <Column>
           <Heading
@@ -87,7 +32,7 @@ const index: FC<Footer> = () => {
               md: { bottom: 2 },
             }}
           >
-            Contact Informations
+            {t("footerContactLabel")}
           </Heading>
 
           <div>
@@ -138,7 +83,7 @@ const index: FC<Footer> = () => {
               md: { bottom: 2 },
             }}
           >
-            Where can you find us
+            {t("footerAddressLabel")}
           </Heading>
 
           <div>
@@ -177,22 +122,85 @@ const index: FC<Footer> = () => {
               md: { bottom: 2 },
             }}
           >
-            Links
+            {t("footerLinksLabel")}
           </Heading>
 
           <Links>
-            <Link href="#home">Home</Link>
-            <Link href="#our-services">Services</Link>
-            <Link href="#about-us">About</Link>
-            <Link href="#our-benefits">Benefits</Link>
-            <Link href="#app-integration">Integration</Link>
+            <Link href="#home">{t("homeLabel")}</Link>
+            <Link href="#services">{t("servicesLabel")}</Link>
+            <Link href="#about-us">{t("aboutLabel")}</Link>
+            <Link href="#our-benefits">{t("benefitLabel")}</Link>
+            <Link href="#app-integration">{t("integrationLabel")}</Link>
           </Links>
         </Column>
       </Main>
 
-      <Secondary />
+      <Heading
+        as="h6"
+        color="primary"
+        $textAlign={{ xs: "center", sm: "center", md: "center" }}
+        $padding={{ md: { top: 3, bottom: 3 } }}
+      >
+        {t("copyRightLabel", { year: year })}
+      </Heading>
     </Footer>
   );
 };
 
 export { index as Footer };
+
+const Footer = styled.div`
+  max-width: 1340px;
+  margin: auto;
+`;
+
+const Logo = styled.img`
+  width: 100px;
+
+  ${({ theme: { breakpoints } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      margin-bottom: 20px;
+    }
+  `}
+`;
+
+const Main = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  ${({ theme: { spaces, breakpoints, colors } }) => css`
+    padding: ${spaces[3]}px;
+    border-bottom: 1px solid ${colors.textColorSecondary};
+
+    a {
+      color: ${colors.textColorSecondary};
+      text-decoration: underline;
+    }
+
+    @media (max-width: ${breakpoints.md}px) {
+      flex-direction: column;
+    }
+  `}
+`;
+
+const Column = styled.div`
+  flex: 0 0 25%;
+
+  ${({ theme: { breakpoints, spaces } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      margin-bottom: ${spaces[3]}px;
+    }
+  `}
+`;
+
+const Links = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${({ theme: { colors } }) => css`
+    a {
+      padding: 7px 0;
+    }
+  `}
+`;

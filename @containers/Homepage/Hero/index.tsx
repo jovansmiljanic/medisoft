@@ -7,71 +7,18 @@ import type { FC } from "react";
 import { Button, Heading, Wave } from "@components";
 
 // Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
-import useTranslation from "next-translate/useTranslation";
-
-const Hero = styled.div`
-  max-width: 1340px;
-  margin: auto;
-  padding: 20px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 150px;
-  position: relative;
-  z-index: 3;
-
-  ${({ theme: { breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      flex-direction: column;
-      padding-top: 40px;
-      position: relative;
-      z-index: 3;
-    }
-  `}
-`;
-
-const Title = styled.h1`
-  font-size: 50px;
-  line-height: 1.2;
-
-  ${({ theme: { breakpoints, font, colors } }) => css`
-    font-weight: ${font.weight.medium};
-    color: ${colors.white};
-
-    @media (max-width: ${breakpoints.md}px) {
-      font-size: 42px;
-    }
-  `}
-`;
-
-const ContentWrap = styled.div`
-  flex: 0 0 45%;
-
-  ${({ theme: { breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      margin-bottom: 20px;
-    }
-  `}
-`;
-
-const MockupWrap = styled.div`
-  flex: 0 0 50%;
-`;
-
-const Mockup = styled.img`
-  width: 100%;
-`;
 
 const index: FC = () => {
-  const { t } = useTranslation();
+  // Translations
+  const t = useTranslations();
 
   return (
     <Wave>
       <Hero id="#home">
         <ContentWrap>
-          <Title>{t("home:heroTitle")}</Title>
+          <Title>{t("heroTitle")}</Title>
 
           <Heading
             as="h6"
@@ -82,11 +29,11 @@ const index: FC = () => {
               md: { top: 2, bottom: 2 },
             }}
           >
-            {t("home:heroDescription")}
+            {t("heroDescription")}
           </Heading>
 
           <Button $variant="white" as="a" href="#our-services">
-            {t("home:heroCtaLabel")}
+            {t("heroCtaLabel")}
           </Button>
         </ContentWrap>
 
@@ -99,3 +46,58 @@ const index: FC = () => {
 };
 
 export { index as Hero };
+
+const Hero = styled.div`
+  max-width: 1340px;
+  margin: auto;
+
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${({ theme: { breakpoints, spaces } }) => css`
+    padding: ${spaces[3]}px;
+    padding-top: 140px;
+
+    @media (max-width: ${breakpoints.md}px) {
+      flex-direction: column;
+      padding-top: ${spaces[6]}px;
+    }
+  `}
+`;
+
+const Title = styled.h1`
+  font-size: 50px;
+  line-height: 1.2;
+
+  ${({ theme: { breakpoints, font, colors } }) => css`
+    color: ${colors.white};
+    font-weight: ${font.weight.medium};
+
+    @media (max-width: ${breakpoints.md}px) {
+      font-size: 42px;
+    }
+  `}
+`;
+
+const ContentWrap = styled.div`
+  flex: 0 0 45%;
+
+  ${({ theme: { breakpoints, spaces } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      flex: 0 0 100%;
+      margin-bottom: ${spaces[3]}px;
+    }
+  `}
+`;
+
+const MockupWrap = styled.div`
+  flex: 0 0 50%;
+`;
+
+const Mockup = styled.img`
+  width: 100%;
+`;

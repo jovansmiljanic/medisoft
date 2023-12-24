@@ -13,12 +13,12 @@ interface Layout {
 
 export const Layout: FC<Layout> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
 
       {children}
 
       <Footer />
-    </div>
+    </>
   );
 };

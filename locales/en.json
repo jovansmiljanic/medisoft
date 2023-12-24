@@ -72,5 +72,18 @@
   "integrationCtaLabel": "Explore more",
 
   "signUpTitle": "Medisoft Insights: Stay Updated on Healthcare Innovation",
-  "signUpCtaLabel": "Sign Up"
+  "signUpCtaLabel": "Sign Up",
+
+  "homeLabel": "Home",
+  "servicesLabel": "Services",
+  "aboutLabel": "About",
+  "benefitLabel": "Benefits",
+  "integrationLabel": "Integration",
+  "getQuoteLabel": "Get a quote",
+
+  "emailPlaceholder": "Your email address",
+  "footerContactLabel": "Contact Informations",
+  "footerAddressLabel": "Where can you find us",
+  "footerLinksLabel": "Links",
+  "copyRightLabel": "Copyright © Medisoft {year}. all right reserved"
 }

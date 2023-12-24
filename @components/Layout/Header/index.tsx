@@ -13,6 +13,7 @@ import { StoreContext } from "@context";
 import Link from "next/link";
 
 // Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
 
 // Global components
@@ -21,11 +22,50 @@ import { Button } from "@components";
 // Local components
 import { Navigation } from "./Navigation";
 
-const Wrapper = styled.div`
-  ${({ theme: { colors } }) => css`
-    background-color: ${colors.white};
-  `}
-`;
+const index: FC = () => {
+  // Translations
+  const t = useTranslations();
+
+  const { isTablet } = useContext(StoreContext);
+
+  const [toggled, setToggle] = useState<boolean>(true);
+
+  useEffect(() => {
+    setToggle(!isTablet);
+  }, [isTablet]);
+
+  return (
+    <Header>
+      <Link href="/">
+        <Logo src="/logo.png" alt="" />
+      </Link>
+
+      {!isTablet && (
+        <Nav>
+          <Link href="#home">{t("homeLabel")}</Link>
+          <Link href="#our-services">{t("servicesLabel")}</Link>
+          <Link href="#about-us">{t("aboutLabel")}</Link>
+          <Link href="#our-benefits">{t("benefitLabel")}</Link>
+          <Link href="#app-integration">{t("integrationLabel")}</Link>
+
+          <Button $variant="primary" size="small">
+            {t("getQuoteLabel")}
+          </Button>
+        </Nav>
+      )}
+
+      {isTablet && (
+        <>
+          <Navigation toggled={toggled} />
+          <Toggler onClick={() => setToggle(!toggled)} />
+        </>
+      )}
+    </Header>
+  );
+};
+
+export { index as Header };
+
 const Header = styled.div`
   position: relative;
   z-index: 100;
@@ -93,45 +133,3 @@ const Nav = styled.div`
 const Logo = styled.img`
   width: 80px;
 `;
-
-const index: FC = () => {
-  const { isTablet } = useContext(StoreContext);
-  const [toggled, setToggle] = useState<boolean>(true);
-
-  useEffect(() => {
-    setToggle(!isTablet);
-  }, [isTablet]);
-
-  return (
-    <Wrapper>
-      <Header>
-        <Link href="/">
-          <Logo src="/logo.png" alt="" />
-        </Link>
-
-        {!isTablet && (
-          <Nav>
-            <Link href="#home">Home</Link>
-            <Link href="#our-services">Services</Link>
-            <Link href="#about-us">About</Link>
-            <Link href="#our-benefits">Benefits</Link>
-            <Link href="#app-integration">Integration</Link>
-
-            <Button $variant="primary" size="small">
-              Get a quote
-            </Button>
-          </Nav>
-        )}
-
-        {isTablet && (
-          <>
-            <Navigation toggled={toggled} />
-            <Toggler onClick={() => setToggle(!toggled)} />
-          </>
-        )}
-      </Header>
-    </Wrapper>
-  );
-};
-
-export { index as Header };

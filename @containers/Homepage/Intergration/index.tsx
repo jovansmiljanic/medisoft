@@ -2,66 +2,24 @@
 import type { FC } from "react";
 
 // Global components
-import { Button, Heading } from "@components";
+import { Button, Heading, Title } from "@components";
 
 // Vendors
 import styled, { css } from "styled-components";
-import useTranslation from "next-translate/useTranslation";
-
-const Integration = styled.div`
-  max-width: 1340px;
-  margin: auto;
-  padding: 80px 20px;
-
-  ${({ theme: { breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      align-items: flex-start;
-    }
-  `}
-`;
-
-const Title = styled.h1`
-  font-size: 50px;
-  line-height: 1.2;
-  padding: 10px 0 20px 0;
-
-  ${({ theme: { breakpoints, font } }) => css`
-    font-weight: ${font.weight.medium};
-
-    @media (max-width: ${breakpoints.md}px) {
-      font-size: 38px;
-    }
-  `}
-`;
-
-const Wrap = styled.div`
-  width: 60%;
-  margin: auto;
-
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  ${({ theme: { breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      width: 100%;
-    }
-  `}
-`;
+import { useTranslations } from "next-intl";
 
 const index: FC = () => {
-  const { t } = useTranslation();
+  // Translation
+  const t = useTranslations();
 
   return (
     <Integration id="app-integration">
       <Wrap>
         <Heading as="h5" color="primary">
-          {t("home:integrationPreTitle")}
+          {t("integrationPreTitle")}
         </Heading>
 
-        <Title>{t("home:integrationTitle")}</Title>
+        <Title>{t("integrationTitle")}</Title>
 
         <Heading
           as="h6"
@@ -72,13 +30,40 @@ const index: FC = () => {
             md: { bottom: 2 },
           }}
         >
-          {t("home:integrationDescription")}
+          {t("integrationDescription")}
         </Heading>
 
-        <Button $variant="primary">{t("home:integrationCtaLabel")}</Button>
+        <Button $variant="primary">{t("integrationCtaLabel")}</Button>
       </Wrap>
     </Integration>
   );
 };
 
 export { index as Integration };
+
+const Integration = styled.div`
+  max-width: 1340px;
+  margin: auto;
+
+  ${({ theme: { breakpoints, spaces } }) => css`
+    padding: ${spaces[10]}px ${spaces[3]}px;
+
+    @media (max-width: ${breakpoints.md}px) {
+      text-align: left;
+      padding: ${spaces[6]}px ${spaces[3]}px;
+    }
+  `}
+`;
+
+const Wrap = styled.div`
+  width: 60%;
+  margin: auto;
+
+  text-align: center;
+
+  ${({ theme: { breakpoints } }) => css`
+    @media (max-width: ${breakpoints.md}px) {
+      width: 100%;
+    }
+  `}
+`;

@@ -1,6 +1,10 @@
 // Core types
-import { Heading } from "@components";
-import useTranslation from "next-translate/useTranslation";
+import type { FC } from "react";
+
+// Global components
+import { Heading, Title } from "@components";
+
+// Svg's
 import {
   Bag,
   Folder,
@@ -9,131 +13,44 @@ import {
   Scan,
   Wallet,
 } from "public/svg";
-import type { FC } from "react";
 
 // Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
 
-const Services = styled.div`
-  max-width: 1340px;
-  margin: auto;
-  padding: 50px 20px 80px 20px;
-
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-
-  ${({ theme: { breakpoints } }) => css`
-    @media (max-width: ${breakpoints.md}px) {
-      flex-direction: column;
-      padding-top: 40px;
-      position: relative;
-      z-index: 3;
-      align-items: flex-start;
-    }
-  `}
-`;
-
-const Title = styled.h1`
-  font-size: 50px;
-  line-height: 1.2;
-  padding: 10px 0;
-  text-align: center;
-
-  ${({ theme: { breakpoints, font } }) => css`
-    font-weight: ${font.weight.medium};
-
-    @media (max-width: ${breakpoints.md}px) {
-      text-align: left;
-      font-size: 38px;
-    }
-  `}
-`;
-
-const Boxes = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const Box = styled.div`
-  flex: 0 0 30%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-
-  border-radius: 10px;
-
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-      rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    transform: translateY(-15px);
-    transition: all 0.5s;
-  }
-
-  ${({ theme: { spaces, breakpoints } }) => css`
-    padding: ${spaces[8]}px;
-    margin-top: ${spaces[6]}px;
-
-    @media (max-width: ${breakpoints.md}px) {
-      flex: 0 0 100%;
-      padding: ${spaces[4]}px;
-    }
-  `}
-`;
-
-const IconWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  padding: 20px;
-  border-radius: 10px;
-
-  ${({ theme: { defaults, colors, font, ...theme } }) => css`
-    background-color: ${colors.primary};
-  `}
-`;
-
 const index: FC = () => {
-  const { t } = useTranslation();
+  // Translation
+  const t = useTranslations();
 
   const services = [
     {
-      title: t("home:ourServicesItem1Title"),
-      description: t("home:ourServicesItem1Description"),
+      title: t("ourServicesItem1Title"),
+      description: t("ourServicesItem1Description"),
       icon: <Folder />,
     },
     {
-      title: t("home:ourServicesItem2Title"),
-      description: t("home:ourServicesItem2Description"),
+      title: t("ourServicesItem2Title"),
+      description: t("ourServicesItem2Description"),
       icon: <Wallet />,
     },
     {
-      title: t("home:ourServicesItem3Title"),
-      description: t("home:ourServicesItem3Description"),
+      title: t("ourServicesItem3Title"),
+      description: t("ourServicesItem3Description"),
       icon: <Bag />,
     },
     {
-      title: t("home:ourServicesItem4Title"),
-      description: t("home:ourServicesItem4Description"),
+      title: t("ourServicesItem4Title"),
+      description: t("ourServicesItem4Description"),
       icon: <Scan />,
     },
     {
-      title: t("home:ourServicesItem5Title"),
-      description: t("home:ourServicesItem5Description"),
+      title: t("ourServicesItem5Title"),
+      description: t("ourServicesItem5Description"),
       icon: <Management />,
     },
     {
-      title: t("home:ourServicesItem6Title"),
-      description: t("home:ourServicesItem6Description"),
+      title: t("ourServicesItem6Title"),
+      description: t("ourServicesItem6Description"),
       icon: <Notification />,
     },
   ];
@@ -141,13 +58,13 @@ const index: FC = () => {
   return (
     <Services id="our-services">
       <Heading as="h5" color="primary">
-        {t("home:ourServicesPreTitle")}
+        {t("ourServicesPreTitle")}
       </Heading>
 
-      <Title>{t("home:ourServicesTitle")}</Title>
+      <Title>{t("ourServicesTitle")}</Title>
 
       <Heading as="h6" color="textColorSecondary">
-        {t("home:ourServicesDescription")}
+        {t("ourServicesDescription")}
       </Heading>
 
       <Boxes>
@@ -178,3 +95,66 @@ const index: FC = () => {
 };
 
 export { index as Services };
+
+const Services = styled.div`
+  max-width: 1340px;
+  margin: auto;
+
+  text-align: center;
+
+  ${({ theme: { breakpoints, spaces } }) => css`
+    padding: ${spaces[6]}px ${spaces[3]}px ${spaces[10]}px ${spaces[3]}px;
+
+    @media (max-width: ${breakpoints.md}px) {
+      text-align: left;
+    }
+  `}
+`;
+
+const Box = styled.div`
+  flex: 0 0 30%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  min-height: 400px;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+      rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    transform: translateY(-15px);
+    transition: all 0.5s;
+  }
+
+  ${({ theme: { spaces, breakpoints } }) => css`
+    padding: ${spaces[8]}px;
+    margin-top: ${spaces[6]}px;
+
+    @media (max-width: ${breakpoints.md}px) {
+      flex: 0 0 100%;
+      padding: ${spaces[4]}px;
+    }
+  `}
+`;
+
+const IconWrap = styled.div`
+  border-radius: 10px;
+
+  ${({ theme: { colors, spaces } }) => css`
+    padding: ${spaces[3]}px;
+    background-color: ${colors.primary};
+  `}
+`;
+
+const Boxes = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+`;

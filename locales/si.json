@@ -72,5 +72,18 @@
   "integrationCtaLabel": "Raziščite več",
 
   "signUpTitle": "Medisoft vpogledi: Ostanite na tekočem z inovacijami v zdravstvu",
-  "signUpCtaLabel": "Prijavite se"
+  "signUpCtaLabel": "Prijavite se",
+
+  "homeLabel": "Domov",
+  "servicesLabel": "Storitve",
+  "aboutLabel": "O nas",
+  "benefitLabel": "Prednosti",
+  "integrationLabel": "Integracija",
+  "getQuoteLabel": "Pridobite ponudbo",
+
+  "emailPlaceholder": "Vaš e-poštni naslov",
+  "footerContactLabel": "Kontaktne informacije",
+  "footerAddressLabel": "Kje nas najdete",
+  "footerLinksLabel": "Povezave",
+  "copyRightLabel": "Avtorske pravice © Medisoft {year}. Vse pravice pridržane"
 }

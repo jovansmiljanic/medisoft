@@ -1,11 +1,188 @@
 "use client";
 
 // Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
-import useTranslation from "next-translate/useTranslation";
 
 // Global components
 import { Heading } from "@components";
+
+// Svg's
+import { ListItem } from "public/svg";
+
+export const benefitContent = () => {
+  const t = useTranslations();
+
+  return [
+    <Benefit>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-1.webp" alt="Benefit 1" />
+      </ImageWrap>
+
+      <BenefitContent>
+        <Heading
+          as="h1"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit1Title")}
+        </Heading>
+
+        <Heading
+          as="h6"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit1Description")}
+        </Heading>
+
+        <List>
+          <Item>
+            <ListItem />
+            <span>{t("benefit1ListItem1")}</span>
+          </Item>
+
+          <Item>
+            <ListItem />
+            <span>{t("benefit1ListItem2")}</span>
+          </Item>
+        </List>
+      </BenefitContent>
+    </Benefit>,
+
+    <Benefit>
+      <BenefitContent>
+        <Heading
+          as="h1"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit2Title")}
+        </Heading>
+
+        <Heading
+          as="h6"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit2Description")}
+        </Heading>
+
+        <List>
+          <Item>
+            <ListItem />
+            <span>{t("benefit2ListItem1")}</span>
+          </Item>
+
+          <Item>
+            <ListItem />
+            <span>{t("benefit2ListItem2")}</span>
+          </Item>
+        </List>
+      </BenefitContent>
+
+      <ImageWrap>
+        <ContentImage src="/images/benefit-2.webp" alt="Benefit 1" />
+      </ImageWrap>
+    </Benefit>,
+
+    <Benefit>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-3.webp" alt="Benefit 1" />
+      </ImageWrap>
+
+      <BenefitContent>
+        <Heading
+          as="h1"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit3Title")}
+        </Heading>
+
+        <Heading
+          as="h6"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit3Description")}
+        </Heading>
+
+        <List>
+          <Item>
+            <ListItem />
+            <span>{t("benefit3ListItem1")}</span>
+          </Item>
+          <Item>
+            <ListItem />
+            <span>{t("benefit3ListItem2")}</span>
+          </Item>
+        </List>
+      </BenefitContent>
+    </Benefit>,
+
+    <Benefit>
+      <BenefitContent>
+        <Heading
+          as="h1"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit4Title")}
+        </Heading>
+
+        <Heading
+          as="h6"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit4Description")}
+        </Heading>
+
+        <List>
+          <Item>
+            <ListItem />
+            <span>{t("benefit4ListItem1")}</span>
+          </Item>
+
+          <Item>
+            <ListItem />
+            <span>{t("benefit4ListItem2")}</span>
+          </Item>
+        </List>
+      </BenefitContent>
+
+      <ImageWrap>
+        <ContentImage src="/images/benefit-4.webp" alt="Benefit 1" />
+      </ImageWrap>
+    </Benefit>,
+
+    <Benefit>
+      <ImageWrap>
+        <ContentImage src="/images/benefit-5.webp" alt="Benefit 1" />
+      </ImageWrap>
+
+      <BenefitContent>
+        <Heading
+          as="h1"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit5Title")}
+        </Heading>
+        <Heading
+          as="h6"
+          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
+        >
+          {t("benefit5Description")}
+        </Heading>
+
+        <List>
+          <Item>
+            <ListItem />
+            <span>{t("benefit5ListItem1")}</span>
+          </Item>
+
+          <Item>
+            <ListItem />
+            <span>{t("benefit5ListItem2")}</span>
+          </Item>
+        </List>
+      </BenefitContent>
+    </Benefit>,
+  ];
+};
 
 const Benefit = styled.div`
   display: flex;
@@ -37,97 +214,21 @@ const ContentImage = styled.img`
   width: 100%;
 `;
 
-export const benefitContent = () => {
-  const { t } = useTranslation();
+const List = styled.ul`
+  margin-left: 10px;
+`;
 
-  return [
-    <Benefit>
-      <ImageWrap>
-        <ContentImage src="/images/benefit-1.webp" alt="Benefit 1" />
-      </ImageWrap>
+const Item = styled.li`
+  display: flex;
+  align-items: center;
 
-      <BenefitContent>
-        <Heading
-          as="h1"
-          $padding={{ xs: { bottom: 2 }, sm: { bottom: 2 }, md: { bottom: 2 } }}
-        >
-          {t("home:benefit1Title")}
-        </Heading>
+  ${({ theme: { spaces } }) => css`
+    margin-bottom: ${spaces[1]}px;
 
-        <Heading as="h6">{t("home:benefit1Description")}</Heading>
-
-        <ul>
-          <li>{t("home:benefit1ListItem1")}</li>
-          <li>{t("home:benefit1ListItem2")}</li>
-        </ul>
-      </BenefitContent>
-    </Benefit>,
-
-    <Benefit>
-      <BenefitContent>
-        <Heading as="h1">{t("home:benefit2Title")}</Heading>
-
-        <Heading as="h6">{t("home:benefit2Description")}</Heading>
-
-        <ul>
-          <li>{t("home:benefit2ListItem1")}</li>
-          <li>{t("home:benefit2ListItem2")}</li>
-        </ul>
-      </BenefitContent>
-
-      <ImageWrap>
-        <ContentImage src="/images/benefit-2.webp" alt="Benefit 1" />
-      </ImageWrap>
-    </Benefit>,
-
-    <Benefit>
-      <ImageWrap>
-        <ContentImage src="/images/benefit-3.webp" alt="Benefit 1" />
-      </ImageWrap>
-
-      <BenefitContent>
-        <Heading as="h1">{t("home:benefit3Title")}</Heading>
-
-        <Heading as="h6">{t("home:benefit3Description")}</Heading>
-
-        <ul>
-          <li>{t("home:benefit3ListItem1")}</li>
-          <li>{t("home:benefit3ListItem2")}</li>
-        </ul>
-      </BenefitContent>
-    </Benefit>,
-
-    <Benefit>
-      <BenefitContent>
-        <Heading as="h1">{t("home:benefit4Title")}</Heading>
-
-        <Heading as="h6">{t("home:benefit4Description")}</Heading>
-
-        <ul>
-          <li>{t("home:benefit4ListItem1")}</li>
-          <li>{t("home:benefit4ListItem2")}</li>
-        </ul>
-      </BenefitContent>
-
-      <ImageWrap>
-        <ContentImage src="/images/benefit-4.webp" alt="Benefit 1" />
-      </ImageWrap>
-    </Benefit>,
-
-    <Benefit>
-      <ImageWrap>
-        <ContentImage src="/images/benefit-5.webp" alt="Benefit 1" />
-      </ImageWrap>
-
-      <BenefitContent>
-        <Heading as="h1">{t("home:benefit5Title")}</Heading>
-        <Heading as="h6">{t("home:benefit5Description")}</Heading>
-
-        <ul>
-          <li>{t("home:benefit5ListItem1")}</li>
-          <li>{t("home:benefit5ListItem2")}</li>
-        </ul>
-      </BenefitContent>
-    </Benefit>,
-  ];
-};
+    svg {
+      min-width: 22px;
+      min-height: 22px;
+      margin-right: ${spaces[1]}px;
+    }
+  `}
+`;

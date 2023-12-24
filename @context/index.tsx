@@ -4,13 +4,7 @@
 import type { FC } from "react";
 
 // Core
-import {
-  createContext,
-  useMemo,
-  useEffect,
-  useState,
-  useCallback,
-} from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 
 // Create Context base
 export const StoreContext = createContext({} as AppContext);
@@ -43,12 +37,14 @@ export const Store: FC<Props> = props => {
 
   const detectLayout = useCallback(() => {
     setIsPhone(window.matchMedia("(max-width: 768px)").matches);
-    setIsTablet(window.matchMedia("(max-width: 1192px)").matches);
+    setIsTablet(window.matchMedia("(max-width: 992px)").matches);
   }, []);
 
   useEffect(() => {
     detectLayout();
+
     window.addEventListener("resize", detectLayout);
+
     return () => window.removeEventListener("resize", detectLayout);
   }, [detectLayout]);
 

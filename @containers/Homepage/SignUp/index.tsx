@@ -2,49 +2,30 @@
 import type { FC } from "react";
 
 // Global componentd
-import { Button } from "@components";
+import { Button, Title } from "@components";
 
 // Server utils
-import { sendEmail } from "../../../@utils/server";
+import { sendEmail } from "@utils";
 
 // Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
-import useTranslation from "next-translate/useTranslation";
-
-const Wrapper = styled.div`
-  padding: 80px 20px;
-`;
 
 const SignUp = styled.div`
   max-width: 1340px;
   margin: auto;
-  display: flex;
-
-  padding: 100px 60px;
   position: relative;
+
+  display: flex;
   border-radius: 10px;
 
-  ${({ theme: { breakpoints, colors } }) => css`
+  ${({ theme: { breakpoints, colors, spaces } }) => css`
+    margin: ${spaces[10]}px auto;
+    padding: ${spaces[10]}px ${spaces[8]}px;
     background-color: ${colors.primary};
 
     @media (max-width: ${breakpoints.md}px) {
-      align-items: flex-start;
-      padding: 80px 20px;
-    }
-  `}
-`;
-
-const Title = styled.h1`
-  font-size: 50px;
-  line-height: 1.2;
-  padding: 10px 0 20px 0;
-
-  ${({ theme: { breakpoints, font, colors } }) => css`
-    font-weight: ${font.weight.medium};
-    color: ${colors.white};
-
-    @media (max-width: ${breakpoints.md}px) {
-      font-size: 38px;
+      padding: ${spaces[6]}px ${spaces[3]}px;
     }
   `}
 `;
@@ -65,6 +46,8 @@ const Content = styled.div`
   flex: 0 0 55%;
 
   ${({ theme: { breakpoints, font, colors } }) => css`
+    color: ${colors.white};
+
     @media (max-width: ${breakpoints.md}px) {
       flex: 0 0 100%;
     }
@@ -99,36 +82,35 @@ const Form = styled.form`
 `;
 
 const index: FC = () => {
-  const { t } = useTranslation();
+  // Translation
+  const t = useTranslations();
 
   return (
-    <Wrapper>
-      <SignUp>
-        <Content>
-          <Title>{t("home:signUpTitle")}</Title>
+    <SignUp>
+      <Content>
+        <Title>{t("signUpTitle")}</Title>
 
-          <Form
-            action={async formData => {
-              await sendEmail(formData);
-            }}
-          >
-            <Input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your email address"
-              required
-            />
+        <Form
+          action={async formData => {
+            await sendEmail(formData);
+          }}
+        >
+          <Input
+            type="email"
+            name="email"
+            id="email"
+            placeholder={t("emailPlaceholder")}
+            required
+          />
 
-            <Button $variant="white" type="submit">
-              {t("home:signUpCtaLabel")}
-            </Button>
-          </Form>
-        </Content>
+          <Button $variant="white" type="submit">
+            {t("signUpCtaLabel")}
+          </Button>
+        </Form>
+      </Content>
 
-        <Image src="/images/signUp.webp" alt="Sign up" />
-      </SignUp>
-    </Wrapper>
+      <Image src="/images/signUp.webp" alt="Sign up" />
+    </SignUp>
   );
 };
 
