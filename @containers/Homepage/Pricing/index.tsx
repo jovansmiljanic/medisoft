@@ -1,8 +1,8 @@
 // Core types
-import type { FC } from "react";
+import { useState, type FC } from "react";
 
 // Global components
-import { Button, Heading, List, Title } from "@components";
+import { Button, Heading, List, Title, Modal } from "@components";
 
 // Vendors
 import { useTranslations } from "next-intl";
@@ -114,95 +114,112 @@ const Price = styled.div`
 const index: FC = () => {
   const t = useTranslations();
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pricingPlan, setPricingPlan] = useState("");
+
   return (
-    <Wrapper id="pricing">
-      <Pricing>
-        <Content>
-          <Heading as="h6" color="primary">
-            {t("pricingPreTitle")}
-          </Heading>
-
-          <Title>{t("pricingTitle")}</Title>
-
-          <Heading
-            as="h6"
-            $padding={{
-              xs: { bottom: 2 },
-              sm: { bottom: 2 },
-              md: { bottom: 2 },
-            }}
-          >
-            {t("pricingDescription")}
-          </Heading>
-        </Content>
-
-        <Boxes>
-          <Box1>
-            <Heading
-              as="h6"
-              $textAlign={{ xs: "center", sm: "center", md: "center" }}
-            >
-              {t("pricingBoxOneTitle")}
+    <>
+      <Wrapper id="pricing">
+        <Pricing>
+          <Content>
+            <Heading as="h6" color="primary">
+              {t("pricingPreTitle")}
             </Heading>
 
-            <Price>
-              <span>{t("pricingBoxOneStartsFrom")}</span>
-              <Title>{t("pricingBoxOnePrice")}</Title>
-              <span>{t("pricingBoxOnePerMonth")}</span>
-            </Price>
+            <Title>{t("pricingTitle")}</Title>
 
-            <List
-              list={[
-                t("pricingBoxOneFeatureOne"),
-                t("pricingBoxOneFeatureTwo"),
-                t("pricingBoxOneFeatureThree"),
-                t("pricingBoxOneFeatureFour"),
-                t("pricingBoxOneFeatureFive"),
-              ]}
-            />
-
-            <Button
-              $variant="primary"
-              $margin={{ xs: { top: 1 }, sm: { top: 1 }, md: { top: 1 } }}
-            >
-              {t("pricingCtaLabel")}
-            </Button>
-          </Box1>
-
-          <Box2>
             <Heading
               as="h6"
-              $textAlign={{ xs: "center", sm: "center", md: "center" }}
+              $padding={{
+                xs: { bottom: 2 },
+                sm: { bottom: 2 },
+                md: { bottom: 2 },
+              }}
             >
-              {t("pricingBoxTwoTitle")}
+              {t("pricingDescription")}
             </Heading>
+          </Content>
 
-            <Price>
-              <span>{t("pricingBoxTwoStartsFrom")}</span>
-              <Title>{t("pricingBoxTwoPrice")}</Title>
-              <span>{t("pricingBoxTwoPerMonth")}</span>
-            </Price>
+          <Boxes>
+            <Box1>
+              <Heading
+                as="h6"
+                $textAlign={{ xs: "center", sm: "center", md: "center" }}
+              >
+                {t("pricingBoxOneTitle")}
+              </Heading>
 
-            <List
-              list={[
-                t("pricingBoxTwoFeatureOne"),
-                t("pricingBoxTwoFeatureTwo"),
-                t("pricingBoxTwoFeatureThree"),
-                t("pricingBoxTwoFeatureFour"),
-                t("pricingBoxTwoFeatureFive"),
-              ]}
-            />
+              <Price>
+                <span>{t("pricingBoxOneStartsFrom")}</span>
+                <Title>{t("pricingBoxOnePrice")}</Title>
+                <span>{t("pricingBoxOnePerMonth")}</span>
+              </Price>
 
-            <Button
-              $variant="white"
-              $margin={{ xs: { top: 1 }, sm: { top: 1 }, md: { top: 1 } }}
-            >
-              {t("pricingCtaLabel")}
-            </Button>
-          </Box2>
-        </Boxes>
-      </Pricing>
-    </Wrapper>
+              <List
+                list={[
+                  t("pricingBoxOneFeatureOne"),
+                  t("pricingBoxOneFeatureTwo"),
+                  t("pricingBoxOneFeatureThree"),
+                  t("pricingBoxOneFeatureFour"),
+                  t("pricingBoxOneFeatureFive"),
+                ]}
+              />
+
+              <Button
+                $variant="primary"
+                $margin={{ xs: { top: 1 }, sm: { top: 1 }, md: { top: 1 } }}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setPricingPlan(t("pricingBoxOneTitle"));
+                }}
+              >
+                {t("pricingCtaLabel")}
+              </Button>
+            </Box1>
+
+            <Box2>
+              <Heading
+                as="h6"
+                $textAlign={{ xs: "center", sm: "center", md: "center" }}
+              >
+                {t("pricingBoxTwoTitle")}
+              </Heading>
+
+              <Price>
+                <span>{t("pricingBoxTwoStartsFrom")}</span>
+                <Title>{t("pricingBoxTwoPrice")}</Title>
+                <span>{t("pricingBoxTwoPerMonth")}</span>
+              </Price>
+
+              <List
+                list={[
+                  t("pricingBoxTwoFeatureOne"),
+                  t("pricingBoxTwoFeatureTwo"),
+                  t("pricingBoxTwoFeatureThree"),
+                  t("pricingBoxTwoFeatureFour"),
+                  t("pricingBoxTwoFeatureFive"),
+                ]}
+              />
+
+              <Button
+                $variant="white"
+                $margin={{ xs: { top: 1 }, sm: { top: 1 }, md: { top: 1 } }}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setPricingPlan(t("pricingBoxTwoTitle"));
+                }}
+              >
+                {t("pricingCtaLabel")}
+              </Button>
+            </Box2>
+          </Boxes>
+        </Pricing>
+      </Wrapper>
+
+      {isModalOpen && (
+        <Modal pricingPlan={pricingPlan} setIsModalOpen={setIsModalOpen} />
+      )}
+    </>
   );
 };
 

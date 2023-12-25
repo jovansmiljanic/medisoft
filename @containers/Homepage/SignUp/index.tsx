@@ -5,7 +5,7 @@ import type { FC } from "react";
 import { Button, Title } from "@components";
 
 // Server utils
-import { sendEmail } from "@utils";
+import { newsletterEmail } from "@utils";
 
 // Vendors
 import { useTranslations } from "next-intl";
@@ -92,7 +92,7 @@ const index: FC = () => {
 
         <Form
           action={async formData => {
-            await sendEmail(formData);
+            await newsletterEmail(formData);
           }}
         >
           <Input

@@ -1,1 +1,2 @@
-export { sendEmail } from "./sendEmail";
+export { newsletterEmail } from "./sendEmail";
+export { quotationEmail } from "./sendEmail";
