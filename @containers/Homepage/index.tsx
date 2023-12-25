@@ -10,6 +10,7 @@ import { AboutUs } from "./AboutUs";
 import { Benefits } from "./Benefits";
 import { Integration } from "./Intergration";
 import { SignUp } from "./SignUp";
+import { Pricing } from "./Pricing";
 
 const index: FC = () => {
   return (
@@ -19,6 +20,7 @@ const index: FC = () => {
       <AboutUs />
       <Benefits />
       <Integration />
+      <Pricing />
       <SignUp />
     </>
   );

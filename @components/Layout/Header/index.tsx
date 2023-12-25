@@ -48,7 +48,7 @@ const index: FC = () => {
           <Link href="#our-benefits">{t("benefitLabel")}</Link>
           <Link href="#app-integration">{t("integrationLabel")}</Link>
 
-          <Button $variant="primary" size="small">
+          <Button $variant="primary" size="small" as="a" href="#pricing">
             {t("getQuoteLabel")}
           </Button>
         </Nav>
@@ -126,6 +126,10 @@ const Nav = styled.div`
     a {
       padding-right: 15px;
       color: ${colors.textColorPrimary};
+
+      &:last-child {
+        color: ${colors.white};
+      }
     }
   `}
 `;

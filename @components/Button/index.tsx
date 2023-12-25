@@ -59,7 +59,7 @@ interface StyledButtonProps {
   disabled?: boolean;
   $variant?: Colors;
   size?: "small" | "medium" | "large";
-  margin?: MarginTypes;
+  $margin?: MarginTypes;
 }
 
 const sizeStyles = {
@@ -133,9 +133,9 @@ const CustomButton = styled.button<StyledButtonProps>`
     background-color: rgb(229, 229, 229);
   }
 
-  ${({ margin, theme }) =>
-    margin &&
-    Object.entries(margin).map(
+  ${({ $margin, theme }) =>
+    $margin &&
+    Object.entries($margin).map(
       ([key, val]) => css`
         @media (${key === "sm" ? "max" : "min"}-width: ${theme.breakpoints[
             key as Breakpointstype
@@ -157,7 +157,7 @@ type ButtonProps<T extends ElementType> = {
   disabled?: boolean;
   $variant?: Colors;
   size?: "small" | "medium" | "large";
-  margin?: MarginTypes;
+  $margin?: MarginTypes;
   children: React.ReactNode;
 } & ComponentPropsWithoutRef<T>;
 
@@ -167,7 +167,7 @@ const index = <T extends ElementType = "button">({
   isCompleted,
   $variant,
   size,
-  margin,
+  $margin,
   children,
   ...rest
 }: ButtonProps<T>): JSX.Element => {
@@ -178,7 +178,7 @@ const index = <T extends ElementType = "button">({
       isCompleted={isCompleted}
       $variant={$variant}
       size={size}
-      margin={margin}
+      $margin={$margin}
       {...rest}
     >
       {isLoading && <LoadingButton />}

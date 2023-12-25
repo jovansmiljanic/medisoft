@@ -20,7 +20,7 @@ const SignUp = styled.div`
   border-radius: 10px;
 
   ${({ theme: { breakpoints, colors, spaces } }) => css`
-    margin: ${spaces[10]}px auto;
+    margin: ${spaces[1]}rem auto;
     padding: ${spaces[10]}px ${spaces[8]}px;
     background-color: ${colors.primary};
 
@@ -45,7 +45,7 @@ const Image = styled.img`
 const Content = styled.div`
   flex: 0 0 55%;
 
-  ${({ theme: { breakpoints, font, colors } }) => css`
+  ${({ theme: { breakpoints, colors } }) => css`
     color: ${colors.white};
 
     @media (max-width: ${breakpoints.md}px) {

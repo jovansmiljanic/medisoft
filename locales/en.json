@@ -71,6 +71,31 @@
   "integrationDescription": "Medisoft's software seamlessly integrates with a wide range of healthcare applications and systems, ensuring a unified and efficient workflow. Our robust integration capabilities allow for effortless synchronization with existing medical tools, enhancing both patient care and practice management. Embrace the full potential of digital healthcare with Medisoft's versatile app integration.",
   "integrationCtaLabel": "Explore more",
 
+  "pricingPreTitle": "PRICING PLAN",
+  "pricingTitle": "We Offer Great And Premium Prices",
+  "pricingDescription": "Explore our customized pricing plans, tailored to meet your medical clinic's needs. From the Basic plan for smaller practices to the Entrepreneurial plan for larger networks, our software offers various features. Enjoy dedicated support, enhanced security, and regular updates, all for improved patient care and clinic management. Choose a plan that fits your budget and operational requirements, and enhance your clinic management.",
+  "pricingCtaLabel": "Get quotation",
+
+  "pricingBoxOneTitle": "Essential Plan",
+  "pricingBoxOneStartsFrom": "From",
+  "pricingBoxOnePrice": "$149",
+  "pricingBoxOnePerMonth": "/month",
+  "pricingBoxOneFeatureOne": "Basic EHR Management",
+  "pricingBoxOneFeatureTwo": "Appointment Scheduling",
+  "pricingBoxOneFeatureThree": "Prescription Management",
+  "pricingBoxOneFeatureFour": "Standard Reporting",
+  "pricingBoxOneFeatureFive": "Email Support",
+
+  "pricingBoxTwoTitle": "Essential Plan",
+  "pricingBoxTwoStartsFrom": "From",
+  "pricingBoxTwoPrice": "$249",
+  "pricingBoxTwoPerMonth": "/month",
+  "pricingBoxTwoFeatureOne": "Advanced EHR",
+  "pricingBoxTwoFeatureTwo": "Telemedicine",
+  "pricingBoxTwoFeatureThree": "Custom Reporting",
+  "pricingBoxTwoFeatureFour": "Inventory Management",
+  "pricingBoxTwoFeatureFive": "Priority Support",
+
   "signUpTitle": "Medisoft Insights: Stay Updated on Healthcare Innovation",
   "signUpCtaLabel": "Sign Up",
 

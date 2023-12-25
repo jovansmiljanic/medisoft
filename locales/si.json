@@ -71,6 +71,31 @@
   "integrationDescription": "Programska oprema Medisofta se nemoteno integrira z raznolikim naborom zdravstvenih aplikacij in sistemov, zagotavlja enoten in učinkovit delovni tok. Naše robustne zmogljivosti integracije omogočajo preprosto sinhronizacijo z obstoječimi medicinskimi orodji, kar izboljša tako oskrbo pacientov kot upravljanje prakse. Objemite polni potencial digitalnega zdravstva z vsestransko integracijo aplikacij Medisofta.",
   "integrationCtaLabel": "Raziščite več",
 
+  "pricingPreTitle": "CENIK NAČRT",
+  "pricingTitle": "Ponujamo Odlične in Premium Cene",
+  "pricingDescription": "Raziščite naše prilagojene cenovne načrte, ki so oblikovani za potrebe vaše zdravstvene klinike. Od Osnovnega načrta za manjše prakse do Podjetniškega za večje mreže, naša programska oprema ponuja različne funkcije. Uživajte v predani podpori, izboljšani varnosti in rednih posodobitvah, vse za boljšo skrb za paciente in upravljanje klinike. Izberite načrt, ki ustreza vašemu proračunu in operativnim zahtevam ter izboljšajte upravljanje klinike.",
+  "pricingCtaLabel": "Pridobite ponudbo",
+
+  "pricingBoxOneTitle": "Osnovni Načrt",
+  "pricingBoxOneStartsFrom": "Od",
+  "pricingBoxOnePrice": "149$",
+  "pricingBoxOnePerMonth": "/mesec",
+  "pricingBoxOneFeatureOne": "Osnovno Upravljanje EHR",
+  "pricingBoxOneFeatureTwo": "Načrtovanje Sestankov",
+  "pricingBoxOneFeatureThree": "Upravljanje Receptov",
+  "pricingBoxOneFeatureFour": "Standardno Poročanje",
+  "pricingBoxOneFeatureFive": "Podpora preko E-pošte",
+
+  "pricingBoxTwoTitle": "Podjetniški Načrt",
+  "pricingBoxTwoStartsFrom": "Od",
+  "pricingBoxTwoPrice": "249$",
+  "pricingBoxTwoPerMonth": "/mesec",
+  "pricingBoxTwoFeatureOne": "Napredni EHR",
+  "pricingBoxTwoFeatureTwo": "Telemedicina",
+  "pricingBoxTwoFeatureThree": "Prilagođeno Poročanje",
+  "pricingBoxTwoFeatureFour": "Upravljanje Zalog",
+  "pricingBoxTwoFeatureFive": "Prednostna Podpora",
+
   "signUpTitle": "Medisoft vpogledi: Ostanite na tekočem z inovacijami v zdravstvu",
   "signUpCtaLabel": "Prijavite se",
 
