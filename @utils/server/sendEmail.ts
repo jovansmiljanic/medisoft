@@ -9,7 +9,7 @@ export const newsletterEmail = async (formData: FormData) => {
 
   resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "smiljko99@gmail.com",
+    to: "dusanantonijevic2404@gmail.com",
     subject: "Medisoft newsletter",
     text: `Hello, ${email} joined your newsletter!`,
   });
@@ -23,7 +23,7 @@ export const quotationEmail = async (formData: FormData) => {
 
   resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "smiljko99@gmail.com",
+    to: "dusanantonijevic2404@gmail.com",
     subject: "Medisoft Quotation",
     text: `Hello, ${firstName} has requested a quotation! \n\n Name: ${firstName} ${lastName} \n Email: ${email} \n Phone number: ${phoneNumber} `,
   });
