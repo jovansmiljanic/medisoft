@@ -110,5 +110,14 @@
   "footerContactLabel": "Kontakt informacije",
   "footerAddressLabel": "Gde nas možete naći",
   "footerLinksLabel": "Linkovi",
-  "copyRightLabel": "Autorska prava © Medisoft {year}. Sva prava zadržana."
+  "copyRightLabel": "Autorska prava © Medisoft {year}. Sva prava zadržana.",
+
+  "modalTitle": "Personalizovana ponuda za potrebe vaše klinike",
+  "modalDescription": "Hvala vam na interesovanju za {pricingPlan}! Radujemo se što ćemo vam pomoći da poboljšate vašu medicinsku praksu našim najsavremenijim softverskim rešenjima. Da bismo vam obezbedili prilagođenu ponudu koja odgovara jedinstvenim potrebama vaše klinike, molimo vas popunite obrazac ispod.",
+  "modalFirstNamePlaceholder": "Unesite svoje ime",
+  "modalLastNamePlaceholder": "Unesite svoje prezime",
+  "modalEmailPlaceholder": "Unesite svoju e-adresu",
+  "modalPhonePlaceholder": "Unesite svoj broj telefona",
+  "modalCtaLabel": "Pošalji",
+  "modalThankYouMessage": "Hvala vam na interesovanju za {pricingPlan}, uskoro ćemo vas kontaktirati!"
 }

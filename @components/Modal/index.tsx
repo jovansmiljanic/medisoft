@@ -1,13 +1,16 @@
 "use client";
 
 // Core types
-import { useRef, type FC, useState, useCallback, useEffect } from "react";
+import { useRef, type FC, useState, useEffect } from "react";
 
 // Global components
 import { Button, Heading } from "@components";
 
 // Vendors
+import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
+
+// Utils
 import { quotationEmail } from "@utils";
 
 const Modal = styled.div`
@@ -82,6 +85,8 @@ interface IModal {
 }
 
 const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
+  const t = useTranslations();
+
   const [isSuccessMessageVisible, setIsSuccessMessageVisible] = useState(false);
 
   // Ref for the dropdown element
@@ -115,8 +120,7 @@ const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
               md: { bottom: 1 },
             }}
           >
-            Thank you for your interest in {pricingPlan}, we will reach out to
-            you soon!
+            {t("modalThankYouMessage", { pricingPlan })}
           </Heading>
         ) : (
           <>
@@ -128,7 +132,7 @@ const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
                 md: { bottom: 1 },
               }}
             >
-              Personalized Quotation for Your Clinic's Needs
+              {t("modalTitle")}
             </Heading>
 
             <Heading
@@ -139,11 +143,7 @@ const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
                 md: { bottom: 2 },
               }}
             >
-              Thank you for your interest in {pricingPlan}! We're excited to
-              help you enhance your medical practice with our state-of-the-art
-              software solutions. To provide you with a customized quotation
-              that fits your clinic's unique needs, please fill out the form
-              below.
+              {t("modalDescription", { pricingPlan })}
             </Heading>
 
             <Form
@@ -161,24 +161,28 @@ const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
               <Input
                 type="text"
                 name="firstName"
-                placeholder="Enter your first name"
+                placeholder={t("modalFirstNamePlaceholder")}
               />
 
               <Input
                 type="text"
                 name="lastName"
-                placeholder="Enter your last name"
+                placeholder={t("modalLastNamePlaceholder")}
               />
 
-              <Input type="email" name="email" placeholder="Enter your email" />
+              <Input
+                type="email"
+                name="email"
+                placeholder={t("modalEmailPlaceholder")}
+              />
 
               <Input
                 type="text"
                 name="phoneNumber"
-                placeholder="Enter your phone number"
+                placeholder={t("modalPhonePlaceholder")}
               />
 
-              <Button $variant="primary">Submit</Button>
+              <Button $variant="primary">{t("modalCtaLabel")}</Button>
             </Form>
           </>
         )}

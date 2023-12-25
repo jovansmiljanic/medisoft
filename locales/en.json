@@ -110,5 +110,14 @@
   "footerContactLabel": "Contact Informations",
   "footerAddressLabel": "Where can you find us",
   "footerLinksLabel": "Links",
-  "copyRightLabel": "Copyright © Medisoft {year}. all right reserved"
+  "copyRightLabel": "Copyright © Medisoft {year}. all right reserved",
+
+  "modalTitle": "Personalized Quotation for Your Clinic's Needs",
+  "modalDescription": " Thank you for your interest in {pricingPlan}! We're excited to help you enhance your medical practice with our state-of-the-art software solutions. To provide you with a customized quotation that fits your clinic's unique needs, please fill out the form below.",
+  "modalFirstNamePlaceholder": "Enter your first name",
+  "modalLastNamePlaceholder": "Enter your last name",
+  "modalEmailPlaceholder": "Enter your email address",
+  "modalPhonePlaceholder": "Enter your phone number",
+  "modalCtaLabel": "Submit",
+  "modalThankYouMessage": " Thank you for your interest in {pricingPlan}, we will reach out to you soon!"
 }
