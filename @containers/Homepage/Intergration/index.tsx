@@ -33,7 +33,9 @@ const index: FC = () => {
           {t("integrationDescription")}
         </Heading>
 
-        <Button $variant="primary">{t("integrationCtaLabel")}</Button>
+        <Button $variant="primary" as="a" href="#pricing">
+          {t("integrationCtaLabel")}
+        </Button>
       </Wrap>
     </Integration>
   );

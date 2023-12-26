@@ -12,6 +12,8 @@ import { Store } from "@context";
 
 import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 import { notFound } from "next/navigation";
+
+// Global components
 import { Layout } from "@components";
 
 const comfortaa = Comfortaa({
