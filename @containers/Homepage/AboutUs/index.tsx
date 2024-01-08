@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import styled, { css } from "styled-components";
 
 // Svg's
-import { BlackMessage, BlueMessage, RedMessage } from "public/svg";
+import { Message } from "public/svg";
 
 const index: FC = () => {
   const t = useTranslations();
@@ -36,21 +36,21 @@ const index: FC = () => {
 
           <List>
             <Item>
-              <RedMessage />
+              <Message />
               <Heading as="h6" $weight="semiBold">
                 {t("aboutUslistItem1")}
               </Heading>
             </Item>
 
             <Item>
-              <BlackMessage />
+              <Message />
               <Heading as="h6" $weight="semiBold">
                 {t("aboutUslistItem2")}
               </Heading>
             </Item>
 
             <Item>
-              <BlueMessage />
+              <Message />
               <Heading as="h6" $weight="semiBold">
                 {t("aboutUslistItem3")}
               </Heading>

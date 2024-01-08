@@ -60,7 +60,7 @@ const Hero = styled.div`
 
   ${({ theme: { breakpoints, spaces } }) => css`
     padding: ${spaces[3]}px;
-    padding-top: 140px;
+    padding-top: 190px;
 
     @media (max-width: ${breakpoints.md}px) {
       flex-direction: column;

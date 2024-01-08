@@ -30,6 +30,7 @@ const Content = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  border-radius: 10px;
 
   ${({ theme: { colors, spaces, breakpoints } }) => css`
     padding: ${spaces[10]}px;
@@ -38,13 +39,23 @@ const Content = styled.div`
     @media (max-width: ${breakpoints.md}px) {
       padding: ${spaces[5]}px;
       width: 90%;
+      height: 90%;
+      overflow: scroll;
     }
   `}
 `;
 
 const Form = styled.form`
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+`;
+
+const FormWrap = styled.div`
+  display: flex;
   justify-content: space-between;
+
   align-items: center;
   flex-wrap: wrap;
 `;
@@ -125,7 +136,8 @@ const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
         ) : (
           <>
             <Heading
-              as="h4"
+              as="h3"
+              $weight="bold"
               $padding={{
                 xs: { bottom: 1 },
                 sm: { bottom: 1 },
@@ -158,29 +170,35 @@ const index: FC<IModal> = ({ setIsModalOpen, pricingPlan }) => {
                 }, 2000);
               }}
             >
-              <Input
-                type="text"
-                name="firstName"
-                placeholder={t("modalFirstNamePlaceholder")}
-              />
+              <FormWrap>
+                <Input
+                  type="text"
+                  name="firstName"
+                  placeholder={t("modalFirstNamePlaceholder")}
+                  required
+                />
 
-              <Input
-                type="text"
-                name="lastName"
-                placeholder={t("modalLastNamePlaceholder")}
-              />
+                <Input
+                  type="text"
+                  name="lastName"
+                  placeholder={t("modalLastNamePlaceholder")}
+                  required
+                />
 
-              <Input
-                type="email"
-                name="email"
-                placeholder={t("modalEmailPlaceholder")}
-              />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder={t("modalEmailPlaceholder")}
+                  required
+                />
 
-              <Input
-                type="text"
-                name="phoneNumber"
-                placeholder={t("modalPhonePlaceholder")}
-              />
+                <Input
+                  type="text"
+                  name="phoneNumber"
+                  placeholder={t("modalPhonePlaceholder")}
+                  required
+                />
+              </FormWrap>
 
               <Button $variant="primary">{t("modalCtaLabel")}</Button>
             </Form>

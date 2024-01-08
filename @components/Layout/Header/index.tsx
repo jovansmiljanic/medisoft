@@ -35,41 +35,52 @@ const index: FC = () => {
   }, [isTablet]);
 
   return (
-    <Header>
-      <Link href="/">
-        <Logo src="/logo.png" alt="" />
-      </Link>
+    <Wrapper>
+      <Header>
+        <Link href="/">
+          <Logo src="/logo.png" alt="" />
+        </Link>
 
-      {!isTablet && (
-        <Nav>
-          <Link href="#home">{t("homeLabel")}</Link>
-          <Link href="#our-services">{t("servicesLabel")}</Link>
-          <Link href="#about-us">{t("aboutLabel")}</Link>
-          <Link href="#our-benefits">{t("benefitLabel")}</Link>
-          <Link href="#app-integration">{t("integrationLabel")}</Link>
+        {!isTablet && (
+          <Nav>
+            <Link href="#home">{t("homeLabel")}</Link>
+            <Link href="#our-services">{t("servicesLabel")}</Link>
+            <Link href="#about-us">{t("aboutLabel")}</Link>
+            <Link href="#our-benefits">{t("benefitLabel")}</Link>
+            <Link href="#app-integration">{t("integrationLabel")}</Link>
 
-          <Button $variant="primary" size="small" as="a" href="#pricing">
-            {t("getQuoteLabel")}
-          </Button>
-        </Nav>
-      )}
+            <Button $variant="primary" size="small" as="a" href="#pricing">
+              {t("getQuoteLabel")}
+            </Button>
+          </Nav>
+        )}
 
-      {isTablet && (
-        <>
-          <Navigation toggled={toggled} />
-          <Toggler onClick={() => setToggle(!toggled)} />
-        </>
-      )}
-    </Header>
+        {isTablet && (
+          <>
+            <Navigation toggled={toggled} />
+            <Toggler onClick={() => setToggle(!toggled)} />
+          </>
+        )}
+      </Header>
+    </Wrapper>
   );
 };
 
 export { index as Header };
 
-const Header = styled.div`
-  position: relative;
+const Wrapper = styled.div`
+  width: 100%;
+  position: fixed;
   z-index: 100;
 
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  ${({ theme: { colors } }) => css`
+    background-color: ${colors.white};
+  `}
+`;
+const Header = styled.div`
   max-width: 1340px;
   margin: auto;
   padding: 20px;
@@ -84,7 +95,7 @@ const Toggler = styled.div`
   width: 40px;
   height: 25px;
   right: 20px;
-  top: 49px;
+  top: 25px;
   cursor: pointer;
 
   &:before {
@@ -135,5 +146,5 @@ const Nav = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 80px;
+  width: 170px;
 `;
