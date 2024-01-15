@@ -75,6 +75,10 @@ const Navigation = styled(motion.div)`
       color: ${colors.textColorPrimary};
       padding: 10px 0;
     }
+
+    @media (min-width: ${breakpoints.md}px) {
+      display: none;
+    }
   `}
 `;
 
@@ -93,5 +97,5 @@ const Links = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 80px;
+  width: 170px;
 `;

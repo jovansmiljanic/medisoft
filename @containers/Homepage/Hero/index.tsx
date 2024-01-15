@@ -64,7 +64,7 @@ const Hero = styled.div`
 
     @media (max-width: ${breakpoints.md}px) {
       flex-direction: column;
-      padding-top: ${spaces[6]}px;
+      padding-top: 7rem;
     }
   `}
 `;
