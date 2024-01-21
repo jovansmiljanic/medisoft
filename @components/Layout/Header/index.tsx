@@ -26,8 +26,6 @@ const index: FC = () => {
   // Translations
   const t = useTranslations();
 
-  const { isTablet } = useContext(StoreContext);
-
   // Ref for the dropdown container
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -112,9 +110,10 @@ const Wrapper = styled.div<{ $isScrolled: boolean }>`
   width: 100%;
   position: fixed;
   z-index: 100;
-  background: white;
 
   ${({ $isScrolled, theme: { colors, breakpoints } }) => css`
+    background: ${colors.white};
+
     ${$isScrolled &&
     css`
       background: rgba(255, 255, 255, 0.72);
@@ -127,6 +126,7 @@ const Wrapper = styled.div<{ $isScrolled: boolean }>`
     }
   `}
 `;
+
 const Header = styled.div`
   max-width: 1340px;
   margin: auto;

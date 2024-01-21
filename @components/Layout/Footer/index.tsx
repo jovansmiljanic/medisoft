@@ -37,18 +37,6 @@ const index: FC = () => {
 
           <div>
             <Heading
-              as="h5"
-              color="textColorSecondary"
-              $padding={{
-                xs: { bottom: 1 },
-                sm: { bottom: 1 },
-                md: { bottom: 1 },
-              }}
-            >
-              Medisoft
-            </Heading>
-
-            <Heading
               as="h6"
               color="textColorSecondary"
               $padding={{
@@ -113,7 +101,7 @@ const index: FC = () => {
           </div>
         </Column>
 
-        <Column>
+        {/* <Column>
           <Heading
             as="h5"
             $padding={{
@@ -132,7 +120,7 @@ const index: FC = () => {
             <Link href="#our-benefits">{t("benefitLabel")}</Link>
             <Link href="#app-integration">{t("integrationLabel")}</Link>
           </Links>
-        </Column>
+        </Column> */}
       </Main>
 
       <Heading
